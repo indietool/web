@@ -1,0 +1,14 @@
+- title: "Smart Domain Discovery"
+  description: "Search across 100+ TLDs with real-time availability checking. Find the perfect domain for your next project in seconds."
+  icon: "🔍"
+  icon_class: "icon-search"
+
+- title: "Unified Management"
+  description: "View and manage all your domains from different registrars in one place. Track expiry dates, auto-renewal status, and DNS records."
+  icon: "📊"
+  icon_class: "icon-manage"
+
+- title: "Single Interface"
+  description: "Configure once and manage everything through a clean CLI. No more logging into multiple registrar dashboards."
+  icon: "⚡"
+  icon_class: "icon-unified"

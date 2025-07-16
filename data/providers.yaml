@@ -1,0 +1,19 @@
+- name: "Cloudflare"
+  description: "Fast, secure domains with built-in CDN and security features."
+  logo: "CF"
+  class: "cloudflare"
+
+- name: "Porkbun"
+  description: "Developer-friendly registrar with competitive pricing and great API."
+  logo: "PB"
+  class: "porkbun"
+
+- name: "Namecheap"
+  description: "Popular registrar with affordable domains and solid customer support."
+  logo: "NC"
+  class: "namecheap"
+
+- name: "GoDaddy"
+  description: "World's largest domain registrar with extensive TLD selection."
+  logo: "GD"
+  class: "godaddy"

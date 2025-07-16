@@ -1,0 +1,4 @@
+{{ with resources.Get "js/main.js" }}
+  {{ $js := . | resources.Minify }}
+  <script src="{{ $js.Permalink }}"{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
+{{ end }}

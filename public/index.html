@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.123.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="indietool: Unified domain management for indie developers. Manage domains across multiple registrars with a single CLI." />
+<meta name="keywords" content="domain management, indie developers, CLI, DNS, Cloudflare, Porkbun, Namecheap, GoDaddy" />
+<meta property="og:title" content="indietool - Unified Domain Management" />
+<meta property="og:description" content="Manage domains across multiple registrars with a single command-line interface." />
+<meta property="og:image" content="/images/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<title>indietool - Unified Domain Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Josefin+Sans:wght@400;600;700;800&display=swap" />
+
+  
+  <link rel="stylesheet" href="http://192.168.1.60:1313/css/main.min.css" />
+
+  </head>
+  <body>
+    <div class="hero-bg">
+  <div class="rainbow-stripes">
+    <div class="stripe-container">
+      <svg
+        viewBox="0 0 250 1000"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        
+        <path
+          d="M 10,1000 L 10,400 Q 10,50 0,0 L 28,0 Q 38,50 38,400 L 38,1000 Z"
+          fill="#387a9b"
+        />
+        
+        <path
+          d="M 42,1000 L 42,400 Q 42,50 52,0 L 78,0 Q 68,50 68,400 L 68,1000 Z"
+          fill="#4f9a8a"
+        />
+        
+        <path
+          d="M 72,1000 L 72,400 Q 72,50 92,0 L 118,0 Q 98,50 98,400 L 98,1000 Z"
+          fill="#9caf88"
+        />
+        
+        <path
+          d="M 102,1000 L 102,400 Q 102,50 132,0 L 158,0 Q 128,50 128,400 L 128,1000 Z"
+          fill="#e9b44c"
+        />
+        
+        <path
+          d="M 132,1000 L 132,400 Q 132,50 172,0 L 198,0 Q 158,50 158,400 L 158,1000 Z"
+          fill="#d4804f"
+        />
+        
+        <path
+          d="M 162,1000 L 162,400 Q 162,50 212,0 L 238,0 Q 188,50 188,400 L 188,1000 Z"
+          fill="#e85a4f"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+    
+    <header>
+  <div class="container">
+    <nav>
+      <a href="/" class="logo">indietool - Unified Domain Management</a>
+      <ul class="nav-links">
+        
+        <li><a href="#features">Features</a></li>
+        
+        <li><a href="#providers">Providers</a></li>
+        
+        <li><a href="#getting-started">Get Started</a></li>
+        
+        <li><a href="#docs">Docs</a></li>
+        
+      </ul>
+      <button
+        class="mobile-menu-btn"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+    </nav>
+  </div>
+</header>
+
+    <main>
+      
+  <section class="hero">
+    <div class="container">
+      <h1>indietool - Unified Domain Management</h1>
+      <p class="hero-subtitle">
+        Manage domains across multiple registrars from a single command-line interface. Built for indie builders who hate DNS chaos.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="#getting-started" class="btn btn-primary">Get Started</a>
+        <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+
+      <div class="terminal-demo">
+  <div class="terminal-header">
+    <div class="terminal-dot dot-red" aria-hidden="true"></div>
+    <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+    <div class="terminal-dot dot-green" aria-hidden="true"></div>
+  </div>
+  <div class="terminal-content">
+    <div class="terminal-line">
+      <span class="prompt">$</span>
+      <span class="command">indietool domains list</span>
+    </div>
+    <div class="terminal-line output">
+      ┌─────────────────┬─────────────┬────────────┬─────────────┐
+    </div>
+    <div class="terminal-line output">
+      │ Domain          │ Registrar   │ Expires    │ Status      │
+    </div>
+    <div class="terminal-line output">
+      ├─────────────────┼─────────────┼────────────┼─────────────┤
+    </div>
+    <div class="terminal-line output">
+      │ myapp.com       │ Cloudflare  │ 2025-03-15 │ ✓ Healthy   │
+    </div>
+    <div class="terminal-line output">
+      │ startup.dev     │ Porkbun     │ 2025-06-22 │ ✓ Healthy   │
+    </div>
+    <div class="terminal-line output">
+      │ project.org     │ Namecheap   │ 2025-01-30 │ ⚠ Warning   │
+    </div>
+    <div class="terminal-line output">
+      └─────────────────┴─────────────┴────────────┴─────────────┘
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span>
+      <span class="command">indietool domain search \</span>
+    </div>
+    <div class="terminal-line">
+      <span class="command"> awesome-idea.com</span>
+    </div>
+    <div class="terminal-line output">
+      ✓ awesome-idea.com is available! ($12.99/year)
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">End the DNS Chaos</h2>
+
+      <div class="features-grid">
+        
+        <div class="feature-card">
+          <div class="feature-icon icon-search" aria-hidden="true">🔍</div>
+          <h3 class="feature-title">Smart Domain Discovery</h3>
+          <p class="feature-description">
+            Search across 100&#43; TLDs with real-time availability checking. Find the perfect domain for your next project in seconds.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon icon-manage" aria-hidden="true">📊</div>
+          <h3 class="feature-title">Unified Management</h3>
+          <p class="feature-description">
+            View and manage all your domains from different registrars in one place. Track expiry dates, auto-renewal status, and DNS records.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon icon-unified" aria-hidden="true">⚡</div>
+          <h3 class="feature-title">Single Interface</h3>
+          <p class="feature-description">
+            Configure once and manage everything through a clean CLI. No more logging into multiple registrar dashboards.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="providers" class="providers">
+    <div class="container">
+      <h2 class="section-title">Supported Providers</h2>
+      <p class="providers-subtitle">
+        Connect your favorite registrars and manage them all from one tool
+      </p>
+
+      <div class="providers-grid">
+        
+        <div class="provider-card">
+          <div class="provider-logo cloudflare" aria-label="Cloudflare logo">
+            CF
+          </div>
+          <h3>Cloudflare</h3>
+          <p>Fast, secure domains with built-in CDN and security features.</p>
+        </div>
+        
+        <div class="provider-card">
+          <div class="provider-logo porkbun" aria-label="Porkbun logo">
+            PB
+          </div>
+          <h3>Porkbun</h3>
+          <p>Developer-friendly registrar with competitive pricing and great API.</p>
+        </div>
+        
+        <div class="provider-card">
+          <div class="provider-logo namecheap" aria-label="Namecheap logo">
+            NC
+          </div>
+          <h3>Namecheap</h3>
+          <p>Popular registrar with affordable domains and solid customer support.</p>
+        </div>
+        
+        <div class="provider-card">
+          <div class="provider-logo godaddy" aria-label="GoDaddy logo">
+            GD
+          </div>
+          <h3>GoDaddy</h3>
+          <p>World&#39;s largest domain registrar with extensive TLD selection.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="getting-started" class="getting-started">
+    <div class="container">
+      <h2 class="section-title">Get Started in Minutes</h2>
+
+      <div class="install-code">
+        <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+        go install github.com/indietool/cli@latest
+      </div>
+
+      <p>Then configure your first provider and start managing domains:</p>
+
+      <div class="terminal-demo" style="text-align: left; max-width: 600px">
+  <div class="terminal-header">
+    <div class="terminal-dot dot-red" aria-hidden="true"></div>
+    <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+    <div class="terminal-dot dot-green" aria-hidden="true"></div>
+  </div>
+  <div class="terminal-content">
+    <div class="terminal-line">
+      <span class="prompt">$</span>
+      <span class="command">indietool config add provider \</span>
+    </div>
+    <div class="terminal-line">
+      <span class="command"> cloudflare --api-token your-token</span>
+    </div>
+    <div class="terminal-line output">
+      ✓ Cloudflare provider configured successfully
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span>
+      <span class="command">indietool domains list</span>
+    </div>
+    <div class="terminal-line output">
+      ✓ Found 3 domains across 1 provider
+    </div>
+  </div>
+</div>
+
+      <div style="margin-top: 60px">
+        <a href="#docs" class="btn btn-primary">View Full Documentation</a>
+      </div>
+    </div>
+  </section>
+
+    </main>
+
+    <footer>
+  <div class="container">
+    <div class="footer-links">
+      
+      <a href="#docs">Documentation</a>
+      
+      <a href="#">GitHub</a>
+      
+      <a href="#">Issues</a>
+      
+      <a href="#">Changelog</a>
+      
+      <a href="#">Community</a>
+      
+    </div>
+    <p>© 2025 indietool. Built for indie builders, by indie builders.</p>
+  </div>
+</footer>
+    
+    
+  
+  <script src="http://192.168.1.60:1313/js/main.min.js"></script>
+
+  </body>
+</html>

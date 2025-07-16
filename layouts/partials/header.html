@@ -1,0 +1,19 @@
+<header>
+  <div class="container">
+    <nav>
+      <a href="/" class="logo">{{ .Site.Title | default "indietool" }}</a>
+      <ul class="nav-links">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+      <button
+        class="mobile-menu-btn"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+    </nav>
+  </div>
+</header>
