@@ -4,14 +4,14 @@
 	<meta name="generator" content="Hugo 0.123.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="indietool: Unified domain management for indie developers. Manage domains across multiple registrars with a single CLI." />
+<meta name="description" content="indietools: Unified domain management for indie developers. Manage domains across multiple registrars with a single CLI." />
 <meta name="keywords" content="domain management, indie developers, CLI, DNS, Cloudflare, Porkbun, Namecheap, GoDaddy" />
-<meta property="og:title" content="indietool - Unified Domain Management" />
+<meta property="og:title" content="indietools - Unified Domain Management" />
 <meta property="og:description" content="Manage domains across multiple registrars with a single command-line interface." />
 <meta property="og:image" content="/images/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<title>indietool - Unified Domain Management</title>
+<title>indietools - Unified Domain Management</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Josefin+Sans:wght@400;600;700;800&display=swap" />
 
@@ -66,7 +66,7 @@
     <header>
   <div class="container">
     <nav>
-      <a href="/" class="logo">indietool - Unified Domain Management</a>
+      <a href="/" class="logo">indietools</a>
       <ul class="nav-links">
         
         <li><a href="#features">Features</a></li>
@@ -93,7 +93,7 @@
       
   <section class="hero">
     <div class="container">
-      <h1>indietool - Unified Domain Management</h1>
+      <h1>indietools - Unified Domain Management</h1>
       <p class="hero-subtitle">
         Manage domains across multiple registrars from a single command-line interface. Built for indie builders who hate DNS chaos.
       </p>
@@ -101,6 +101,24 @@
       <div class="cta-buttons">
         <a href="#getting-started" class="btn btn-primary">Get Started</a>
         <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+
+      <div class="terminal-demo" style="margin-top: 30px;">
+        <div class="terminal-header">
+          <div class="terminal-dot dot-red" aria-hidden="true"></div>
+          <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+          <div class="terminal-dot dot-green" aria-hidden="true"></div>
+        </div>
+        <div class="terminal-content">
+          <div class="terminal-line">
+            <span class="prompt">$</span>
+            <span class="command">indietools domain search awesome-idea.com</span>
+          </div>
+          
+          <div class="terminal-line">
+            <span class="output">✓ awesome-idea.com is available! ($12.99/year)</span>
+          </div>
+        </div>
       </div>
 
       <div class="terminal-demo">
@@ -112,41 +130,33 @@
   <div class="terminal-content">
     <div class="terminal-line">
       <span class="prompt">$</span>
-      <span class="command">indietool domains list</span>
+      <span class="command">indietools domains list</span>
     </div>
-    <div class="terminal-line output">
-      ┌─────────────────┬─────────────┬────────────┬─────────────┐
-    </div>
-    <div class="terminal-line output">
-      │ Domain          │ Registrar   │ Expires    │ Status      │
-    </div>
-    <div class="terminal-line output">
-      ├─────────────────┼─────────────┼────────────┼─────────────┤
-    </div>
-    <div class="terminal-line output">
-      │ myapp.com       │ Cloudflare  │ 2025-03-15 │ ✓ Healthy   │
-    </div>
-    <div class="terminal-line output">
-      │ startup.dev     │ Porkbun     │ 2025-06-22 │ ✓ Healthy   │
-    </div>
-    <div class="terminal-line output">
-      │ project.org     │ Namecheap   │ 2025-01-30 │ ⚠ Warning   │
-    </div>
-    <div class="terminal-line output">
-      └─────────────────┴─────────────┴────────────┴─────────────┘
-    </div>
-    <div class="terminal-line">
-      <span class="prompt">$</span>
-      <span class="command">indietool domain search \</span>
-    </div>
-    <div class="terminal-line">
-      <span class="command"> awesome-idea.com</span>
-    </div>
-    <div class="terminal-line output">
-      ✓ awesome-idea.com is available! ($12.99/year)
+    
+    <div class="terminal-table">
+      <div class="table-header">NAME</div>
+      <div class="table-header">PROVIDER</div>
+      <div class="table-header">STATUS</div>
+      <div class="table-header">EXPIRES</div>
+      
+      <div class="table-cell domain-name">pixelcraft.io</div>
+      <div class="table-cell provider-name">cloudflare</div>
+      <div class="table-cell status-healthy">healthy</div>
+      <div class="table-cell expires-date">2mo</div>
+      
+      <div class="table-cell domain-name">startup.dev</div>
+      <div class="table-cell provider-name">porkbun</div>
+      <div class="table-cell status-healthy">healthy</div>
+      <div class="table-cell expires-date">5mo</div>
+      
+      <div class="table-cell domain-name">project.org</div>
+      <div class="table-cell provider-name">namecheap</div>
+      <div class="table-cell status-warning">warning</div>
+      <div class="table-cell expires-date">15d</div>
     </div>
   </div>
 </div>
+
     </div>
   </section>
 
@@ -233,14 +243,24 @@
     <div class="container">
       <h2 class="section-title">Get Started in Minutes</h2>
 
-      <div class="install-code">
-        <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-        go install github.com/indietool/cli@latest
+      <div class="terminal-demo" style="max-width: 800px; margin: 40px auto;">
+        <div class="terminal-header">
+          <div class="terminal-dot dot-red" aria-hidden="true"></div>
+          <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+          <div class="terminal-dot dot-green" aria-hidden="true"></div>
+        </div>
+        <div class="terminal-content">
+          <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+          <div class="terminal-line">
+            <span class="prompt">$</span>
+            <span class="command">go install github.com/indietools-one/cli@latest</span>
+          </div>
+        </div>
       </div>
 
       <p>Then configure your first provider and start managing domains:</p>
 
-      <div class="terminal-demo" style="text-align: left; max-width: 600px">
+      <div class="terminal-demo" style="text-align: left; max-width: 800px">
   <div class="terminal-header">
     <div class="terminal-dot dot-red" aria-hidden="true"></div>
     <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
@@ -249,23 +269,21 @@
   <div class="terminal-content">
     <div class="terminal-line">
       <span class="prompt">$</span>
-      <span class="command">indietool config add provider \</span>
-    </div>
-    <div class="terminal-line">
-      <span class="command"> cloudflare --api-token your-token</span>
+      <span class="command">indietools config add provider cloudflare --api-token your-token</span>
     </div>
     <div class="terminal-line output">
       ✓ Cloudflare provider configured successfully
     </div>
     <div class="terminal-line">
       <span class="prompt">$</span>
-      <span class="command">indietool domains list</span>
+      <span class="command">indietools domains list</span>
     </div>
     <div class="terminal-line output">
       ✓ Found 3 domains across 1 provider
     </div>
   </div>
 </div>
+
 
       <div style="margin-top: 60px">
         <a href="#docs" class="btn btn-primary">View Full Documentation</a>
@@ -290,7 +308,7 @@
       <a href="#">Community</a>
       
     </div>
-    <p>© 2025 indietool. Built for indie builders, by indie builders.</p>
+    <p>© 2025 indietools. Built for indie builders, by indie builders.</p>
   </div>
 </footer>
     

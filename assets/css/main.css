@@ -138,7 +138,7 @@ nav {
 
 /* Hero Section */
 .hero {
-  padding: 100px 0 100px;
+  padding: 80px 0 60px;
   text-align: center;
   position: relative;
   z-index: 5;
@@ -168,7 +168,7 @@ nav {
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .btn {
@@ -229,15 +229,16 @@ nav {
   box-shadow: 0px 0px 0px #2d2d2d;
 }
 
+/* FIXED TERMINAL DEMO */
 .terminal-demo {
   background: rgba(26, 26, 26, 0.95);
   border-radius: 12px;
-  padding: 30px;
-  max-width: 700px;
+  padding: 25px 30px;
+  max-width: 800px;
   margin: 0 auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
-  overflow-x: auto;
+  border: 3px solid #2d2d2d;
   /* Fallback for browsers without backdrop-filter */
   background: #1a1a1a;
 }
@@ -268,31 +269,64 @@ nav {
 
 .terminal-content {
   font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
-  font-size: clamp(11px, 2.5vw, 14px);
+  font-size: clamp(12px, 2.5vw, 14px);
   color: #00ff00;
   text-align: left;
-  white-space: pre-wrap;
+  line-height: 1.4;
 }
 
 .terminal-line {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
 .prompt {
   color: #87ceeb;
+  margin-right: 8px;
+  flex-shrink: 0;
 }
 
 .command {
   color: #ffffff;
+  word-break: break-all;
 }
 
 .output {
   color: #00ff00;
+  width: 100%;
 }
+
+/* Improved table layout for terminal output */
+.terminal-table {
+  margin: 12px 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 12px;
+  font-size: clamp(11px, 2vw, 13px);
+}
+
+.table-header {
+  font-weight: bold;
+  color: #87ceeb;
+  border-bottom: 1px solid #333;
+  padding-bottom: 4px;
+}
+
+.table-cell {
+  padding: 3px 0;
+}
+
+.domain-name { color: #00ff00; }
+.provider-name { color: #ffbd2e; }
+.status-healthy { color: #27ca3f; }
+.status-warning { color: #ff5f56; }
+.expires-date { color: #ccc; }
 
 /* Features Section */
 .features {
-  padding: 100px 0;
+  padding: 80px 0;
   background: rgba(255, 255, 255, 0.45);
   position: relative;
   backdrop-filter: blur(10px);
@@ -322,12 +356,14 @@ nav {
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
   background: #faf9f7;
+  border: 3px solid transparent;
 }
 
 .feature-card:hover,
 .feature-card:focus-within {
   transform: translateY(-5px);
   border-color: #e85a4f;
+  box-shadow: 6px 6px 0px #e85a4f;
 }
 
 .feature-icon {
@@ -340,6 +376,7 @@ nav {
   font-size: 24px;
   margin-bottom: 20px;
   aria-hidden: true;
+  border: 3px solid #2d2d2d;
 }
 
 .icon-search {
@@ -368,7 +405,7 @@ nav {
 
 /* Providers Section */
 .providers {
-  padding: 100px 0;
+  padding: 80px 0;
   background: rgba(250, 249, 247, 0.75);
   backdrop-filter: blur(10px);
 }
@@ -394,14 +431,17 @@ nav {
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   backdrop-filter: blur(5px);
   background: #ffffff;
+  border: 3px solid transparent;
 }
 
 .provider-card:hover,
 .provider-card:focus-within {
   transform: translateY(-5px);
+  border-color: #e85a4f;
+  box-shadow: 6px 6px 0px #e85a4f;
 }
 
 .provider-logo {
@@ -415,6 +455,7 @@ nav {
   font-weight: 700;
   color: white;
   font-size: 18px;
+  border: 3px solid #2d2d2d;
 }
 
 .cloudflare {
@@ -448,28 +489,17 @@ nav {
 
 /* Getting Started */
 .getting-started {
-  padding: 100px 0;
+  padding: 80px 0;
   background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(10px);
   text-align: center;
 }
 
-.install-code {
-  background: rgba(26, 26, 26, 0.95);
-  color: #00ff00;
-  padding: 20px;
-  border-radius: 12px;
-  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
-  font-size: clamp(12px, 3vw, 16px);
-  margin: 40px auto;
-  max-width: 500px;
+.getting-started .terminal-demo {
   position: relative;
-  backdrop-filter: blur(10px);
-  background: #1a1a1a;
-  white-space: pre-wrap;
 }
 
-.copy-btn {
+.getting-started .copy-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -481,11 +511,18 @@ nav {
   font-size: 12px;
   cursor: pointer;
   min-height: 32px;
+  border: 2px solid #555;
+  z-index: 10;
 }
 
-.copy-btn:focus {
+.getting-started .copy-btn:focus {
   outline: 2px solid #e85a4f;
   outline-offset: 2px;
+}
+
+.getting-started .copy-btn:hover {
+  background: #555;
+  border-color: #777;
 }
 
 .getting-started p {
@@ -575,7 +612,7 @@ footer p {
   }
 
   .hero {
-    padding: 60px 0 80px;
+    padding: 60px 0 50px;
   }
 
   .cta-buttons {
@@ -592,7 +629,18 @@ footer p {
 
   .terminal-demo {
     padding: 20px;
-    margin: 40px 10px 0 10px;
+    margin: 30px 10px 0 10px;
+  }
+
+  .terminal-table {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .table-header,
+  .table-cell {
+    border-bottom: none;
+    padding: 2px 0;
   }
 
   .features {
@@ -626,8 +674,8 @@ footer p {
     padding: 60px 0;
   }
 
-  .install-code {
-    margin: 30px 10px;
+  .getting-started .terminal-demo {
+    margin: 30px 10px !important;
     padding: 15px;
   }
 
@@ -667,9 +715,10 @@ footer p {
     font-size: 10px;
   }
 
-  .install-code {
+  .getting-started .terminal-demo {
     font-size: 11px;
     padding: 12px;
+    margin: 30px 5px !important;
   }
 
   .rainbow-stripes {
@@ -689,9 +738,9 @@ footer p {
   }
 
   .terminal-demo,
-  .install-code {
-    margin-left: 5px;
-    margin-right: 5px;
+  .getting-started .terminal-demo {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
   }
 
   .feature-card,

@@ -1,75 +1,105 @@
 {{ define "main" }}
-  <section class="hero">
-    <div class="container">
-      <h1>{{ .Site.Title | default "Unified Domain Management" }}</h1>
-      <p class="hero-subtitle">
-        {{ .Site.Params.hero_subtitle | default "Manage domains across multiple registrars from a single command-line interface. Built for indie builders who hate DNS chaos." }}
-      </p>
+<section class="hero">
+  <div class="container">
+    <h1>{{ .Site.Title | default "Unified Domain Management" }}</h1>
+    <p class="hero-subtitle">
+      {{ .Site.Params.hero_subtitle | default "Manage domains across multiple registrars from a single command-line
+      interface. Built for indie builders who hate DNS chaos." }}
+    </p>
 
-      <div class="cta-buttons">
-        <a href="#getting-started" class="btn btn-primary">Get Started</a>
-        <a href="#features" class="btn btn-secondary">Learn More</a>
-      </div>
-
-      {{ partial "terminal-demo.html" . }}
+    <div class="cta-buttons">
+      <a href="#getting-started" class="btn btn-primary">Get Started</a>
+      <a href="#features" class="btn btn-secondary">Learn More</a>
     </div>
-  </section>
 
-  <section id="features" class="features">
-    <div class="container">
-      <h2 class="section-title">End the DNS Chaos</h2>
-
-      <div class="features-grid">
-        {{ range .Site.Data.features }}
-        <div class="feature-card">
-          <div class="feature-icon {{ .icon_class }}" aria-hidden="true">{{ .icon }}</div>
-          <h3 class="feature-title">{{ .title }}</h3>
-          <p class="feature-description">
-            {{ .description }}
-          </p>
+    <div class="terminal-demo" style="margin-top: 30px;">
+      <div class="terminal-header">
+        <div class="terminal-dot dot-red" aria-hidden="true"></div>
+        <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+        <div class="terminal-dot dot-green" aria-hidden="true"></div>
+      </div>
+      <div class="terminal-content">
+        <div class="terminal-line">
+          <span class="prompt">$</span>
+          <span class="command">indietools domain search awesome-idea.com</span>
         </div>
-        {{ end }}
-      </div>
-    </div>
-  </section>
 
-  <section id="providers" class="providers">
-    <div class="container">
-      <h2 class="section-title">Supported Providers</h2>
-      <p class="providers-subtitle">
-        Connect your favorite registrars and manage them all from one tool
-      </p>
-
-      <div class="providers-grid">
-        {{ range .Site.Data.providers }}
-        <div class="provider-card">
-          <div class="provider-logo {{ .class }}" aria-label="{{ .name }} logo">
-            {{ .logo }}
-          </div>
-          <h3>{{ .name }}</h3>
-          <p>{{ .description }}</p>
+        <div class="terminal-line">
+          <span class="output">✓ awesome-idea.com is available! ($12.99/year)</span>
         </div>
-        {{ end }}
       </div>
     </div>
-  </section>
 
-  <section id="getting-started" class="getting-started">
-    <div class="container">
-      <h2 class="section-title">Get Started in Minutes</h2>
+    {{ partial "terminal-demo.html" . }}
+  </div>
+</section>
 
-      <div class="install-code">
+<section id="features" class="features">
+  <div class="container">
+    <h2 class="section-title">End the DNS Chaos</h2>
+
+    <div class="features-grid">
+      {{ range .Site.Data.features }}
+      <div class="feature-card">
+        <div class="feature-icon {{ .icon_class }}" aria-hidden="true">{{ .icon }}</div>
+        <h3 class="feature-title">{{ .title }}</h3>
+        <p class="feature-description">
+          {{ .description }}
+        </p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="providers" class="providers">
+  <div class="container">
+    <h2 class="section-title">Supported Providers</h2>
+    <p class="providers-subtitle">
+      Connect your favorite registrars and manage them all from one tool
+    </p>
+
+    <div class="providers-grid">
+      {{ range .Site.Data.providers }}
+      <div class="provider-card">
+        <div class="provider-logo {{ .class }}" aria-label="{{ .name }} logo">
+          {{ .logo }}
+        </div>
+        <h3>{{ .name }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="getting-started" class="getting-started">
+  <div class="container">
+    <h2 class="section-title">Get Started in Minutes</h2>
+
+    <div class="terminal-demo" style="max-width: 800px; margin: 40px auto;">
+      <div class="terminal-header">
+        <div class="terminal-dot dot-red" aria-hidden="true"></div>
+        <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+        <div class="terminal-dot dot-green" aria-hidden="true"></div>
+      </div>
+      <div class="terminal-content">
         <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-        {{ .Site.Params.install_command | default "go install github.com/indietool/cli@latest" }}
-      </div>
-
-      <p>Then configure your first provider and start managing domains:</p>
-
-      {{ partial "setup-terminal.html" . }}
-
-      <div style="margin-top: 60px">
-        <a href="#docs" class="btn btn-primary">View Full Documentation</a>
+        <div class="terminal-line">
+          <span class="prompt">$</span>
+          <span class="command">{{ .Site.Params.install_command | default "go install
+            github.com/indietools-one/cli@latest" }}</span>
+        </div>
       </div>
     </div>
-  </section>
+
+    <p>Then configure your first provider and start managing domains:</p>
+
+    {{ partial "setup-terminal.html" . }}
+
+    <div style="margin-top: 60px">
+      <a href="#docs" class="btn btn-primary">View Full Documentation</a>
+    </div>
+  </div>
+</section>
 {{ end }}

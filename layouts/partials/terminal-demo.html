@@ -7,38 +7,29 @@
   <div class="terminal-content">
     <div class="terminal-line">
       <span class="prompt">$</span>
-      <span class="command">indietool domains list</span>
+      <span class="command">indietools domains list</span>
     </div>
-    <div class="terminal-line output">
-      ┌─────────────────┬─────────────┬────────────┬─────────────┐
-    </div>
-    <div class="terminal-line output">
-      │ Domain          │ Registrar   │ Expires    │ Status      │
-    </div>
-    <div class="terminal-line output">
-      ├─────────────────┼─────────────┼────────────┼─────────────┤
-    </div>
-    <div class="terminal-line output">
-      │ myapp.com       │ Cloudflare  │ 2025-03-15 │ ✓ Healthy   │
-    </div>
-    <div class="terminal-line output">
-      │ startup.dev     │ Porkbun     │ 2025-06-22 │ ✓ Healthy   │
-    </div>
-    <div class="terminal-line output">
-      │ project.org     │ Namecheap   │ 2025-01-30 │ ⚠ Warning   │
-    </div>
-    <div class="terminal-line output">
-      └─────────────────┴─────────────┴────────────┴─────────────┘
-    </div>
-    <div class="terminal-line">
-      <span class="prompt">$</span>
-      <span class="command">indietool domain search \</span>
-    </div>
-    <div class="terminal-line">
-      <span class="command"> awesome-idea.com</span>
-    </div>
-    <div class="terminal-line output">
-      ✓ awesome-idea.com is available! ($12.99/year)
+
+    <div class="terminal-table">
+      <div class="table-header">NAME</div>
+      <div class="table-header">PROVIDER</div>
+      <div class="table-header">STATUS</div>
+      <div class="table-header">EXPIRES</div>
+
+      <div class="table-cell domain-name">pixelcraft.io</div>
+      <div class="table-cell provider-name">cloudflare</div>
+      <div class="table-cell status-healthy">healthy</div>
+      <div class="table-cell expires-date">2mo</div>
+
+      <div class="table-cell domain-name">startup.dev</div>
+      <div class="table-cell provider-name">porkbun</div>
+      <div class="table-cell status-healthy">healthy</div>
+      <div class="table-cell expires-date">5mo</div>
+
+      <div class="table-cell domain-name">project.org</div>
+      <div class="table-cell provider-name">namecheap</div>
+      <div class="table-cell status-warning">warning</div>
+      <div class="table-cell expires-date">15d</div>
     </div>
   </div>
 </div>

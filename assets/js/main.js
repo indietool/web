@@ -1,5 +1,5 @@
 function copyToClipboard() {
-  const text = "go install github.com/indietool/cli@latest";
+  const text = "go install github.com/indietools-one/cli@latest";
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.querySelector(".copy-btn");
     const originalText = btn.textContent;
