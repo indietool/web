@@ -3,31 +3,12 @@
   <div class="container">
     <h1>{{ .Site.Title | default "Unified Domain Management" }}</h1>
     <p class="hero-subtitle">
-      {{ .Site.Params.hero_subtitle | default "Manage domains across multiple registrars from a single command-line
-      interface. Built for indie builders who hate DNS chaos." }}
+      {{ .Site.Params.hero_subtitle | default "Manage domains across multiple registrars from a single command-line interface. Built for indie builders who hate DNS chaos." }}
     </p>
 
     <div class="cta-buttons">
       <a href="#getting-started" class="btn btn-primary">Get Started</a>
       <a href="#features" class="btn btn-secondary">Learn More</a>
-    </div>
-
-    <div class="terminal-demo" style="margin-top: 30px;">
-      <div class="terminal-header">
-        <div class="terminal-dot dot-red" aria-hidden="true"></div>
-        <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-        <div class="terminal-dot dot-green" aria-hidden="true"></div>
-      </div>
-      <div class="terminal-content">
-        <div class="terminal-line">
-          <span class="prompt">$</span>
-          <span class="command">indietools domain search awesome-idea.com</span>
-        </div>
-
-        <div class="terminal-line">
-          <span class="output">✓ awesome-idea.com is available! ($12.99/year)</span>
-        </div>
-      </div>
     </div>
 
     {{ partial "terminal-demo.html" . }}
@@ -87,8 +68,9 @@
         <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
         <div class="terminal-line">
           <span class="prompt">$</span>
-          <span class="command">{{ .Site.Params.install_command | default "go install
-            github.com/indietools-one/cli@latest" }}</span>
+          <span class="command">
+            {{ .Site.Params.install_command | default "go install github.com/indietools-one/cli@latest" }}
+          </span>
         </div>
       </div>
     </div>

@@ -65,10 +65,12 @@ main {
 }
 
 @keyframes wave {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -183,6 +185,7 @@ nav {
   justify-content: center;
   min-height: 50px;
   min-width: 120px;
+  width: 240px;
   border: 3px solid #2d2d2d;
   box-shadow: 6px 6px 0px #2d2d2d;
   position: relative;
@@ -260,9 +263,11 @@ nav {
 .dot-red {
   background: #ff5f56;
 }
+
 .dot-yellow {
   background: #ffbd2e;
 }
+
 .dot-green {
   background: #27ca3f;
 }
@@ -273,6 +278,11 @@ nav {
   color: #00ff00;
   text-align: left;
   line-height: 1.4;
+}
+
+.terminal-command {
+  margin: 0 0 20px 0;
+  padding: 1px 0;
 }
 
 .terminal-line {
@@ -310,7 +320,7 @@ nav {
 .table-header {
   font-weight: bold;
   color: #87ceeb;
-  border-bottom: 1px solid #333;
+  /* border-bottom: 1px solid #333; */
   padding-bottom: 4px;
 }
 
@@ -318,11 +328,25 @@ nav {
   padding: 3px 0;
 }
 
-.domain-name { color: #00ff00; }
-.provider-name { color: #ffbd2e; }
-.status-healthy { color: #27ca3f; }
-.status-warning { color: #ff5f56; }
-.expires-date { color: #ccc; }
+.domain-name {
+  color: #00ff00;
+}
+
+.provider-name {
+  color: #ffbd2e;
+}
+
+.status-healthy {
+  color: #27ca3f;
+}
+
+.status-warning {
+  color: #ff5f56;
+}
+
+.expires-date {
+  color: #ccc;
+}
 
 /* Features Section */
 .features {
@@ -382,9 +406,11 @@ nav {
 .icon-search {
   background: linear-gradient(135deg, #e85a4f, #d4804f);
 }
+
 .icon-manage {
   background: linear-gradient(135deg, #4f9a8a, #387a9b);
 }
+
 .icon-unified {
   background: linear-gradient(135deg, #e9b44c, #9caf88);
 }
@@ -462,14 +488,17 @@ nav {
   background: #f38020;
   aria-label: "Cloudflare logo";
 }
+
 .porkbun {
   background: #ff6b9d;
   aria-label: "Porkbun logo";
 }
+
 .namecheap {
   background: #ff6c37;
   aria-label: "Namecheap logo";
 }
+
 .godaddy {
   background: #1bdbdb;
   aria-label: "GoDaddy logo";

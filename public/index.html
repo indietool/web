@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="indietools: Unified domain management for indie developers. Manage domains across multiple registrars with a single CLI." />
 <meta name="keywords" content="domain management, indie developers, CLI, DNS, Cloudflare, Porkbun, Namecheap, GoDaddy" />
-<meta property="og:title" content="indietools - Unified Domain Management" />
+<meta property="og:title" content="Infrastructure, Unified." />
 <meta property="og:description" content="Manage domains across multiple registrars with a single command-line interface." />
 <meta property="og:image" content="/images/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<title>indietools - Unified Domain Management</title>
+<title>Infrastructure, Unified.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Josefin+Sans:wght@400;600;700;800&display=swap" />
 
@@ -91,64 +91,48 @@
 
     <main>
       
-  <section class="hero">
-    <div class="container">
-      <h1>indietools - Unified Domain Management</h1>
-      <p class="hero-subtitle">
-        Manage domains across multiple registrars from a single command-line interface. Built for indie builders who hate DNS chaos.
-      </p>
+<section class="hero">
+  <div class="container">
+    <h1>Infrastructure, Unified.</h1>
+    <p class="hero-subtitle">
+      Manage domains across multiple registrars from a single command-line interface. Built for indie builders who hate DNS chaos.
+    </p>
 
-      <div class="cta-buttons">
-        <a href="#getting-started" class="btn btn-primary">Get Started</a>
-        <a href="#features" class="btn btn-secondary">Learn More</a>
-      </div>
+    <div class="cta-buttons">
+      <a href="#getting-started" class="btn btn-primary">Get Started</a>
+      <a href="#features" class="btn btn-secondary">Learn More</a>
+    </div>
 
-      <div class="terminal-demo" style="margin-top: 30px;">
-        <div class="terminal-header">
-          <div class="terminal-dot dot-red" aria-hidden="true"></div>
-          <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-          <div class="terminal-dot dot-green" aria-hidden="true"></div>
-        </div>
-        <div class="terminal-content">
-          <div class="terminal-line">
-            <span class="prompt">$</span>
-            <span class="command">indietools domain search awesome-idea.com</span>
-          </div>
-          
-          <div class="terminal-line">
-            <span class="output">✓ awesome-idea.com is available! ($12.99/year)</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="terminal-demo">
+    <div class="terminal-demo">
   <div class="terminal-header">
     <div class="terminal-dot dot-red" aria-hidden="true"></div>
     <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
     <div class="terminal-dot dot-green" aria-hidden="true"></div>
   </div>
   <div class="terminal-content">
-    <div class="terminal-line">
-      <span class="prompt">$</span>
-      <span class="command">indietools domains list</span>
+    <div class="terminal-command">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command">indietools domains list</span>
+      </div>
     </div>
-    
+
     <div class="terminal-table">
       <div class="table-header">NAME</div>
       <div class="table-header">PROVIDER</div>
       <div class="table-header">STATUS</div>
       <div class="table-header">EXPIRES</div>
-      
+
       <div class="table-cell domain-name">pixelcraft.io</div>
       <div class="table-cell provider-name">cloudflare</div>
       <div class="table-cell status-healthy">healthy</div>
       <div class="table-cell expires-date">2mo</div>
-      
+
       <div class="table-cell domain-name">startup.dev</div>
       <div class="table-cell provider-name">porkbun</div>
       <div class="table-cell status-healthy">healthy</div>
       <div class="table-cell expires-date">5mo</div>
-      
+
       <div class="table-cell domain-name">project.org</div>
       <div class="table-cell provider-name">namecheap</div>
       <div class="table-cell status-warning">warning</div>
@@ -157,139 +141,145 @@
   </div>
 </div>
 
+  </div>
+</section>
+
+<section id="features" class="features">
+  <div class="container">
+    <h2 class="section-title">End the DNS Chaos</h2>
+
+    <div class="features-grid">
+      
+      <div class="feature-card">
+        <div class="feature-icon icon-search" aria-hidden="true">🔍</div>
+        <h3 class="feature-title">Smart Domain Discovery</h3>
+        <p class="feature-description">
+          Search across 100&#43; TLDs with real-time availability checking. Find the perfect domain for your next project in seconds.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon icon-manage" aria-hidden="true">📊</div>
+        <h3 class="feature-title">Unified Management</h3>
+        <p class="feature-description">
+          View and manage all your domains from different registrars in one place. Track expiry dates, auto-renewal status, and DNS records.
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon icon-unified" aria-hidden="true">⚡</div>
+        <h3 class="feature-title">Single Interface</h3>
+        <p class="feature-description">
+          Configure once and manage everything through a clean CLI. No more logging into multiple registrar dashboards.
+        </p>
+      </div>
+      
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="features" class="features">
-    <div class="container">
-      <h2 class="section-title">End the DNS Chaos</h2>
+<section id="providers" class="providers">
+  <div class="container">
+    <h2 class="section-title">Supported Providers</h2>
+    <p class="providers-subtitle">
+      Connect your favorite registrars and manage them all from one tool
+    </p>
 
-      <div class="features-grid">
-        
-        <div class="feature-card">
-          <div class="feature-icon icon-search" aria-hidden="true">🔍</div>
-          <h3 class="feature-title">Smart Domain Discovery</h3>
-          <p class="feature-description">
-            Search across 100&#43; TLDs with real-time availability checking. Find the perfect domain for your next project in seconds.
-          </p>
+    <div class="providers-grid">
+      
+      <div class="provider-card">
+        <div class="provider-logo cloudflare" aria-label="Cloudflare logo">
+          CF
         </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon icon-manage" aria-hidden="true">📊</div>
-          <h3 class="feature-title">Unified Management</h3>
-          <p class="feature-description">
-            View and manage all your domains from different registrars in one place. Track expiry dates, auto-renewal status, and DNS records.
-          </p>
+        <h3>Cloudflare</h3>
+        <p>Fast, secure domains with built-in CDN and security features.</p>
+      </div>
+      
+      <div class="provider-card">
+        <div class="provider-logo porkbun" aria-label="Porkbun logo">
+          PB
         </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon icon-unified" aria-hidden="true">⚡</div>
-          <h3 class="feature-title">Single Interface</h3>
-          <p class="feature-description">
-            Configure once and manage everything through a clean CLI. No more logging into multiple registrar dashboards.
-          </p>
+        <h3>Porkbun</h3>
+        <p>Developer-friendly registrar with competitive pricing and great API.</p>
+      </div>
+      
+      <div class="provider-card">
+        <div class="provider-logo namecheap" aria-label="Namecheap logo">
+          NC
         </div>
-        
+        <h3>Namecheap</h3>
+        <p>Popular registrar with affordable domains and solid customer support.</p>
+      </div>
+      
+      <div class="provider-card">
+        <div class="provider-logo godaddy" aria-label="GoDaddy logo">
+          GD
+        </div>
+        <h3>GoDaddy</h3>
+        <p>World&#39;s largest domain registrar with extensive TLD selection.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="getting-started" class="getting-started">
+  <div class="container">
+    <h2 class="section-title">Get Started in Minutes</h2>
+
+    <div class="terminal-demo" style="max-width: 800px; margin: 40px auto;">
+      <div class="terminal-header">
+        <div class="terminal-dot dot-red" aria-hidden="true"></div>
+        <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+        <div class="terminal-dot dot-green" aria-hidden="true"></div>
+      </div>
+      <div class="terminal-content">
+        <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+        <div class="terminal-line">
+          <span class="prompt">$</span>
+          <span class="command">
+            go install github.com/indietools-one/cli@latest
+          </span>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section id="providers" class="providers">
-    <div class="container">
-      <h2 class="section-title">Supported Providers</h2>
-      <p class="providers-subtitle">
-        Connect your favorite registrars and manage them all from one tool
-      </p>
+    <p>Then configure your first provider and start managing domains:</p>
 
-      <div class="providers-grid">
-        
-        <div class="provider-card">
-          <div class="provider-logo cloudflare" aria-label="Cloudflare logo">
-            CF
-          </div>
-          <h3>Cloudflare</h3>
-          <p>Fast, secure domains with built-in CDN and security features.</p>
-        </div>
-        
-        <div class="provider-card">
-          <div class="provider-logo porkbun" aria-label="Porkbun logo">
-            PB
-          </div>
-          <h3>Porkbun</h3>
-          <p>Developer-friendly registrar with competitive pricing and great API.</p>
-        </div>
-        
-        <div class="provider-card">
-          <div class="provider-logo namecheap" aria-label="Namecheap logo">
-            NC
-          </div>
-          <h3>Namecheap</h3>
-          <p>Popular registrar with affordable domains and solid customer support.</p>
-        </div>
-        
-        <div class="provider-card">
-          <div class="provider-logo godaddy" aria-label="GoDaddy logo">
-            GD
-          </div>
-          <h3>GoDaddy</h3>
-          <p>World&#39;s largest domain registrar with extensive TLD selection.</p>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <section id="getting-started" class="getting-started">
-    <div class="container">
-      <h2 class="section-title">Get Started in Minutes</h2>
-
-      <div class="terminal-demo" style="max-width: 800px; margin: 40px auto;">
-        <div class="terminal-header">
-          <div class="terminal-dot dot-red" aria-hidden="true"></div>
-          <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-          <div class="terminal-dot dot-green" aria-hidden="true"></div>
-        </div>
-        <div class="terminal-content">
-          <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-          <div class="terminal-line">
-            <span class="prompt">$</span>
-            <span class="command">go install github.com/indietools-one/cli@latest</span>
-          </div>
-        </div>
-      </div>
-
-      <p>Then configure your first provider and start managing domains:</p>
-
-      <div class="terminal-demo" style="text-align: left; max-width: 800px">
+    <div class="terminal-demo" style="text-align: left; max-width: 800px">
   <div class="terminal-header">
     <div class="terminal-dot dot-red" aria-hidden="true"></div>
     <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
     <div class="terminal-dot dot-green" aria-hidden="true"></div>
   </div>
   <div class="terminal-content">
-    <div class="terminal-line">
-      <span class="prompt">$</span>
-      <span class="command">indietools config add provider cloudflare --api-token your-token</span>
+    <div class="terminal-command">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command">indietools config add provider cloudflare --api-token your-token</span>
+      </div>
+      <div class="terminal-line output">
+        ✓ Cloudflare provider configured successfully
+      </div>
     </div>
-    <div class="terminal-line output">
-      ✓ Cloudflare provider configured successfully
-    </div>
-    <div class="terminal-line">
-      <span class="prompt">$</span>
-      <span class="command">indietools domains list</span>
-    </div>
-    <div class="terminal-line output">
-      ✓ Found 3 domains across 1 provider
+    <div class="terminal-command">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command">indietools domains list</span>
+      </div>
+      <div class="terminal-line output">
+        ✓ Found 3 domains across 1 provider
+      </div>
     </div>
   </div>
 </div>
 
 
-      <div style="margin-top: 60px">
-        <a href="#docs" class="btn btn-primary">View Full Documentation</a>
-      </div>
+    <div style="margin-top: 60px">
+      <a href="#docs" class="btn btn-primary">View Full Documentation</a>
     </div>
-  </section>
+  </div>
+</section>
 
     </main>
 
