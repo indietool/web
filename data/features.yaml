@@ -1,5 +1,5 @@
 - title: "Smart Domain Discovery"
-  description: "Search across 100+ TLDs with real-time availability checking. Find the perfect domain for your next project in seconds."
+  description: "Quickly search across 50 TLDs with real-time availability checking. Find the perfect domain for your next project in seconds."
   icon: "🔍"
   icon_class: "icon-search"
 
@@ -7,6 +7,11 @@
   description: "View and manage all your domains from different registrars in one place. Track expiry dates, auto-renewal status, and DNS records."
   icon: "📊"
   icon_class: "icon-manage"
+
+- title: "Developer-First Secrets"
+  description: "Store API keys and secrets securely with zero infrastructure. Git-like CLI commands, encrypted files, and perfect for local development."
+  icon: "🔒"
+  icon_class: "icon-secrets"
 
 - title: "Single Interface"
   description: "Configure once and manage everything through a clean CLI. No more logging into multiple registrar dashboards."

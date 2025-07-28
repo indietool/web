@@ -232,18 +232,20 @@ nav {
   box-shadow: 0px 0px 0px #2d2d2d;
 }
 
-/* FIXED TERMINAL DEMO */
+/* STANDARDIZED TERMINAL DEMO */
 .terminal-demo {
   background: rgba(26, 26, 26, 0.95);
   border-radius: 12px;
   padding: 25px 30px;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 40px auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   border: 3px solid #2d2d2d;
   /* Fallback for browsers without backdrop-filter */
   background: #1a1a1a;
+  overflow: scroll;
+  text-align: left;
 }
 
 .terminal-header {
@@ -278,6 +280,20 @@ nav {
   color: #00ff00;
   text-align: left;
   line-height: 1.4;
+  overflow: scroll;
+}
+
+.terminal-text {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  white-space: pre;
+  overflow-x: auto;
 }
 
 .terminal-command {
@@ -288,24 +304,31 @@ nav {
 .terminal-line {
   margin-bottom: 6px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: baseline;
+  white-space: nowrap;
 }
 
 .prompt {
   color: #87ceeb;
-  margin-right: 8px;
-  flex-shrink: 0;
 }
 
 .command {
   color: #ffffff;
-  word-break: break-all;
 }
 
 .output {
   color: #00ff00;
   width: 100%;
+}
+
+.success {
+  color: #27ca3f;
+}
+
+.table-header {
+  color: #87ceeb;
+  font-weight: bold;
 }
 
 /* Improved table layout for terminal output */
@@ -516,10 +539,129 @@ nav {
   line-height: 1.5;
 }
 
+/* Workflows Section */
+.workflows {
+  padding: 80px 0;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  /* margin: 40px 0; */
+  position: relative;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #4a4a4a;
+  font-size: clamp(14px, 3.5vw, 18px);
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.workflows-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.workflow-card {
+  background: rgba(250, 249, 247, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.workflow-card:hover,
+.workflow-card:focus-within {
+  transform: translateY(-5px);
+  border-color: #e85a4f;
+  box-shadow: 6px 6px 0px #e85a4f;
+}
+
+.workflow-title {
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.workflow-card .terminal-demo {
+  /* margin: 20px auto 0; */
+  /* max-width: 800px; */
+}
+
+/* Secrets Demo Section */
+.secrets-demo {
+  padding: 80px 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  /* margin: 40px 0; */
+  text-align: center;
+  position: relative;
+}
+
+/* FAQ Section */
+.faq {
+  padding: 80px 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  /* margin: 40px 0; */
+  position: relative;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.faq-item {
+  background: rgba(250, 249, 247, 0.9);
+  padding: 30px;
+  border-radius: 16px;
+  border: 3px solid #fbd6d659;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.faq-item:hover,
+.faq-item:focus-within {
+  transform: translateY(-3px);
+  border-color: #e85a4f;
+  box-shadow: 4px 4px 0px #e85a4f;
+}
+
+.faq-question {
+  font-size: clamp(16px, 3.5vw, 18px);
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.faq-answer p {
+  color: #4a4a4a;
+  font-size: clamp(14px, 3vw, 16px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.faq-answer code {
+  background: rgba(45, 45, 45, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 0.9em;
+  color: #2d2d2d;
+}
+
 /* Getting Started */
 .getting-started {
   padding: 80px 0;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   text-align: center;
 }
@@ -561,12 +703,17 @@ nav {
   padding: 0 20px;
 }
 
+.cta-section {
+  margin-top: 60px;
+}
+
 /* Footer */
 footer {
   padding: 60px 0;
   background: #2d2d2d;
   color: white;
   text-align: center;
+  margin: 80px 0 0 0;
 }
 
 .footer-links {
@@ -699,6 +846,42 @@ footer p {
     padding: 25px 20px;
   }
 
+  .workflows {
+    padding: 60px 0;
+  }
+
+  .workflows-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .workflow-card {
+    padding: 25px 20px;
+  }
+
+  .workflow-card .terminal-demo {
+    padding: 15px;
+  }
+
+  .faq {
+    padding: 60px 0;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .faq-item {
+    padding: 25px 20px;
+  }
+
+  .secrets-demo {
+    padding: 60px 0;
+  }
+
   .getting-started {
     padding: 60px 0;
   }
@@ -758,6 +941,14 @@ footer p {
 
   .feature-card {
     padding: 25px 20px;
+  }
+
+  .workflow-card {
+    padding: 20px 15px;
+  }
+
+  .faq-item {
+    padding: 20px 15px;
   }
 }
 

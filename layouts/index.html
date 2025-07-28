@@ -54,11 +54,150 @@
   </div>
 </section>
 
+<section id="workflows" class="workflows">
+  <div class="container">
+    <h2 class="section-title">Everyday Developer Flows</h2>
+    <p class="section-subtitle">Real workflows for real projects</p>
+
+    <div class="workflows-grid">
+      <div class="workflow-card">
+        <h3 class="workflow-title">🚀 Weekend Project Setup</h3>
+        <div class="terminal-demo">
+          <div class="terminal-header">
+            <div class="terminal-dot dot-red" aria-hidden="true"></div>
+            <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+            <div class="terminal-dot dot-green" aria-hidden="true"></div>
+          </div>
+          <div class="terminal-content">
+            <pre class="terminal-text">
+<span class="prompt">$ </span><span class="command">indietool domain explore myproject --tlds dev,com,ai</span>
+<span class="table-header">DOMAIN STATUS TLD EXPIRY</span>
+<span class="domain-name">myproject.ai</span> <span class="status-healthy">Available</span> ai -
+<span class="domain-name">myproject.dev</span> <span class="status-healthy">Available</span> dev -
+<span class="domain-name">myproject.com</span> <span class="status-warning">Taken</span> com 2026-07-06
+
+<span class="prompt">$ </span><span class="command">indietool secret set openai-key "sk-..." --note "OpenAI API key"</span>
+<span class="success">✓ Secret 'openai-key' stored successfully</span>
+
+<span class="prompt">$ </span><span class="command">indietool secret set stripe-key "sk_test_..." --note "Stripe test key"</span>
+<span class="success">✓ Secret 'stripe-key' stored successfully</span>
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="workflow-card">
+        <h3 class="workflow-title">🚀 Production Deployment</h3>
+        <div class="terminal-demo">
+          <div class="terminal-header">
+            <div class="terminal-dot dot-red" aria-hidden="true"></div>
+            <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+            <div class="terminal-dot dot-green" aria-hidden="true"></div>
+          </div>
+          <div class="terminal-content">
+            <pre class="terminal-text">
+<span class="prompt">$ </span><span class="command">indietool domains list --provider cloudflare</span>
+<span class="table-header">DOMAIN PROVIDER STATUS EXPIRY</span>
+<span class="domain-name">myawesomeapp.com</span> <span class="provider-name">cloudflare</span> <span class="status-healthy">Active</span> 2025-12-15
+<span class="domain-name">sideproject.ai</span> <span class="provider-name">cloudflare</span> <span class="status-healthy">Active</span> 2025-08-10
+
+<span class="prompt">$ </span><span class="command">export OPENAI_KEY=$(indietool secret get openai-key --show --json | jq -r '.value')</span>
+<span class="prompt">$ </span><span class="command">export STRIPE_KEY=$(indietool secret get stripe-key --show --json | jq -r '.value')</span>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="secrets-demo" class="secrets-demo">
+  <div class="container">
+    <h2 class="section-title">Secure Your Development Workflow</h2>
+    <p class="section-subtitle">Store API keys and secrets with zero infrastructure. Git-like commands, encrypted files.</p>
+
+    <div class="terminal-demo">
+      <div class="terminal-header">
+        <div class="terminal-dot dot-red" aria-hidden="true"></div>
+        <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
+        <div class="terminal-dot dot-green" aria-hidden="true"></div>
+      </div>
+      <div class="terminal-content">
+        <pre class="terminal-text">
+<span class="prompt">$ </span><span class="command">indietool secrets init</span>
+<span class="success">✓ Encryption key initialized for database 'default'</span>
+
+<span class="prompt">$ </span><span class="command">indietool secret set github-token "ghp_1234567890abcdef" --note "Personal access token"</span>
+<span class="success">✓ Secret 'github-token' stored successfully</span>
+
+<span class="prompt">$ </span><span class="command">indietool secret list</span>
+<span class="table-header">NAME NOTE CREATED</span>
+github-token Personal access token 2025-01-26 14:30:15
+
+<span class="prompt">$ </span><span class="command">indietool secret get github-token --show</span>
+ghp_1234567890abcdef
+        </pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3 class="faq-question">❓ Which platforms are supported?</h3>
+        <div class="faq-answer">
+          <p>Currently macOS and Linux only.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">❓ Where are my secrets stored?</h3>
+        <div class="faq-answer">
+          <p>Encrypted locally at <code>~/.config/indietool/secrets/</code>, using an encryption key stored in your OS keyring (Keychain on macOS, <code>gnome-keyring</code> on Linux).</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">❓ What if I lose my computer?</h3>
+        <div class="faq-answer">
+          <p>Secrets are useless without your OS user account + keyring. Just run <code>indietool secrets init</code> on your new machine and re-add your secrets.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">❓ Which registrars are supported?</h3>
+        <div class="faq-answer">
+          <p>Cloudflare, Porkbun, Namecheap, and Godaddy are currently supported. Others coming soon</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">❓ Can I sync secrets across machines?</h3>
+        <div class="faq-answer">
+          <p>No, secrets are not synced across machines. This keeps them secure and local to your development environment.</p>
+          <p>Users will have to find their own way to transfer secrets between machines if desired.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">❓ Is there a web UI or GUI?</h3>
+        <div class="faq-answer">
+          <p>No, indietool is CLI-only for now. This keeps it fast, lightweight, and perfect for developer workflows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="getting-started" class="getting-started">
   <div class="container">
     <h2 class="section-title">Get Started in Minutes</h2>
 
-    <div class="terminal-demo" style="max-width: 800px; margin: 40px auto;">
+    <div class="terminal-demo">
       <div class="terminal-header">
         <div class="terminal-dot dot-red" aria-hidden="true"></div>
         <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
@@ -66,12 +205,7 @@
       </div>
       <div class="terminal-content">
         <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-        <div class="terminal-line">
-          <span class="prompt">$</span>
-          <span class="command">
-            {{ .Site.Params.install_command | default "go install github.com/indietools-one/cli@latest" }}
-          </span>
-        </div>
+        <pre class="terminal-text"><span class="prompt">$ </span><span class="command">{{ .Site.Params.install_command | default "go install github.com/indietool/cli@latest" }}</span></pre>
       </div>
     </div>
 
@@ -79,7 +213,7 @@
 
     {{ partial "setup-terminal.html" . }}
 
-    <div style="margin-top: 60px">
+    <div class="cta-section">
       <a href="#docs" class="btn btn-primary">View Full Documentation</a>
     </div>
   </div>

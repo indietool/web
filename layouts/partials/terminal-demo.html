@@ -5,33 +5,12 @@
     <div class="terminal-dot dot-green" aria-hidden="true"></div>
   </div>
   <div class="terminal-content">
-    <div class="terminal-command">
-      <div class="terminal-line">
-        <span class="prompt">$</span>
-        <span class="command">indietools domains list</span>
-      </div>
-    </div>
-
-    <div class="terminal-table">
-      <div class="table-header">NAME</div>
-      <div class="table-header">PROVIDER</div>
-      <div class="table-header">STATUS</div>
-      <div class="table-header">EXPIRES</div>
-
-      <div class="table-cell domain-name">pixelcraft.io</div>
-      <div class="table-cell provider-name">cloudflare</div>
-      <div class="table-cell status-healthy">healthy</div>
-      <div class="table-cell expires-date">2mo</div>
-
-      <div class="table-cell domain-name">startup.dev</div>
-      <div class="table-cell provider-name">porkbun</div>
-      <div class="table-cell status-healthy">healthy</div>
-      <div class="table-cell expires-date">5mo</div>
-
-      <div class="table-cell domain-name">project.org</div>
-      <div class="table-cell provider-name">namecheap</div>
-      <div class="table-cell status-warning">warning</div>
-      <div class="table-cell expires-date">15d</div>
-    </div>
+    <pre class="terminal-text"><span class="prompt">$ </span><span class="command">indietools domains list</span>
+<span class="table-header">NAME                PROVIDER    STATUS   EXPIRES  AUTO-RENEW  AGE</span>
+<span class="domain-name">pixelcraft.io</span>       <span class="provider-name">cloudflare</span>  <span class="status-healthy">healthy</span>  2mo      Yes         18d
+<span class="domain-name">startup.dev</span>         <span class="provider-name">porkbun</span>     <span class="status-healthy">healthy</span>  5mo      Yes         45d
+<span class="domain-name">project.org</span>         <span class="provider-name">namecheap</span>   <span class="status-warning">warning</span>  15d      No          2y
+<span class="domain-name">mywebsite.com</span>       <span class="provider-name">cloudflare</span>  <span class="status-healthy">healthy</span>  8mo      Yes         1y
+<span class="domain-name">demo.app</span>            <span class="provider-name">porkbun</span>     <span class="status-healthy">healthy</span>  11mo     Yes         6mo</pre>
   </div>
 </div>
