@@ -3,10 +3,10 @@ languageCode: "en-us"
 title: "Infrastructure, Unified."
 
 params:
-  description: "indietool: Unified domain management for indie developers. Manage domains across multiple registrars with a single CLI."
-  keywords: "domain management, indie developers, CLI, DNS, Cloudflare, Porkbun, Namecheap, GoDaddy"
-  og_description: "Manage domains across multiple registrars with a single command-line interface."
-  hero_subtitle: "Manage domains across multiple registrars from a single command-line interface. Built for indie builders who hate DNS chaos."
+  description: "indietool: One CLI for all your infrastructure chores."
+  keywords: "domain management, indie developers, CLI, DNS, Cloudflare, Porkbun, Namecheap, GoDaddy, secrets, encryption"
+  og_description: "indietool: One CLI for all your infrastructure chores."
+  hero_subtitle: "Manage domains, DNS, secrets and more from one place. Built for indie builders who value efficiency."
   install_command: "go install github.com/indietool-one/cli@latest"
 
 copyright: "© 2025 indietool. Built for indie builders, by indie builders."
