@@ -40,17 +40,14 @@ menu:
       url: "#faq"
       weight: 15
     - name: "GitHub"
-      url: "#"
+      url: "https://github.com/indietool/cli"
       weight: 20
     - name: "Issues"
-      url: "#"
+      url: "https://github.com/indietool/cli/issues"
       weight: 30
     - name: "Changelog"
       url: "#"
       weight: 40
-    - name: "Community"
-      url: "#"
-      weight: 50
 
 markup:
   goldmark:
