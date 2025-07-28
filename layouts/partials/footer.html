@@ -2,7 +2,7 @@
   <div class="container">
     <div class="footer-links">
       {{ range .Site.Menus.footer }}
-      <a href="{{ .URL }}">{{ .Name }}</a>
+      <a href="{{ .URL }}" data-umami-event="ftr-{{ .Name | lower }}">{{ .Name }}</a>
       {{ end }}
     </div>
     <p>{{ .Site.Copyright | default "© 2025 indietool. Built for indie builders, by indie builders." }}</p>
