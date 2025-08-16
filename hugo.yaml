@@ -48,3 +48,9 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
+security:
+  funcs:
+    getenv:
+      - "^PRODUCTION$"
+      - "^VERSION$"

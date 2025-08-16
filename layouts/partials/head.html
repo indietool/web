@@ -1,9 +1,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="{{ .Site.Params.description | default "indietool: CLI for indie builders. Manage domains across registrars, DNS records with auto-detection, and secrets with OS keyring encryption." }}" />
-<meta name="keywords" content="{{ .Site.Params.keywords | default "domain management, DNS management, secrets management, CLI tool, indie developers, Cloudflare, Porkbun, Namecheap" }}" />
-<meta property="og:title" content="{{ .Site.Params.og_title | default "indietool - Stop bouncing between dashboards" }}" />
-<meta property="og:description" content="{{ .Site.Params.og_description | default "One CLI for domains, DNS, and secrets. Built for indie builders who just want to ship." }}" />
+<meta name="description" content="{{ .Site.Params.description | default " indietool: CLI for indie builders. Manage domains across registrars, DNS records with auto-detection, and secrets with OS keyring encryption." }}" />
+<meta name="keywords" content="{{ .Site.Params.keywords | default " domain management, DNS management, secrets management, CLI tool, indie developers, Cloudflare, Porkbun, Namecheap" }}" />
+<meta property="og:title" content="{{ .Site.Params.og_title | default " indietool - Stop bouncing between dashboards" }}" />
+<meta property="og:description" content="{{ .Site.Params.og_description | default " One CLI for domains, DNS, and secrets. Built for indie builders who just want to ship." }}" />
 <meta property="og:image" content="/images/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -11,6 +11,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Josefin+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
 {{ with resources.Get "css/main.css" }}
-  {{ $css := . | resources.Minify }}
-  <link rel="stylesheet" href="{{ $css.Permalink }}"{{ if hugo.IsProduction }} integrity="{{ $css.Data.Integrity }}"{{ end }} />
+{{ $css := . | resources.Minify }}
+<link rel="stylesheet" href="{{ $css.Permalink }}" {{ if hugo.IsProduction }} integrity="{{ $css.Data.Integrity }}" {{ end }} />
+{{ end }}
+{{ if getenv "PRODUCTION" }}
+<script defer src="https://i.indietool.dev/script.js" data-website-id="810d8615-dbd3-4166-a4be-51529c7407da" {{ with getenv "VERSION" }} data-tag="{{ . }}" {{ end }}></script>
 {{ end }}

@@ -48,10 +48,18 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Get version
+        id: get_version
+        run: |
+          # Get the most recent tag, fallback to current git hash if no tags exist
+          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || git rev-parse --short HEAD)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
+          PRODUCTION: 1
+          VERSION: ${{ steps.get_version.outputs.version }}
         run: |
           hugo \
             --minify \
