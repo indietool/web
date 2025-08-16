@@ -1,52 +1,47 @@
-baseURL: "https://indietool.one"
+baseURL: "https://indietool.dev"
 languageCode: "en-us"
-title: "Infrastructure, Unified."
+title: "indietool - Stop bouncing between dashboards"
 
 params:
-  description: "indietool: One CLI for all your infrastructure chores."
-  keywords: "domain management, indie developers, CLI, DNS, Cloudflare, Porkbun, Namecheap, GoDaddy, secrets, encryption"
-  og_description: "indietool: One CLI for all your infrastructure chores."
-  hero_subtitle: "Manage domains, DNS, secrets and more from one place. Built for indie builders who value efficiency."
-  install_command: "go install github.com/indietool-one/cli@latest"
+  description: "indietool: CLI for indie builders. Manage domains across registrars, DNS records with auto-detection, and secrets with OS keyring encryption."
+  keywords: "domain management, DNS management, secrets management, CLI tool, indie developers, Cloudflare, Porkbun, Namecheap"
+  og_title: "indietool - Stop bouncing between dashboards"
+  og_description: "One CLI for domains, DNS, and secrets. Built for indie builders who just want to ship."
+  hero_subtitle: "One CLI for domains, DNS, and secrets. No vendor lock-in. Just you and your terminal."
+  install_command: "go install github.com/indietool/cli@latest"
 
-copyright: "© 2025 indietool. Built for indie builders, by indie builders."
+copyright: "© 2025 indietool. CLI only. No web UI planned."
 
 menu:
   main:
-    - name: "Features"
-      url: "#features"
-      weight: 10
-    - name: "Providers"
-      url: "#providers"
-      weight: 20
     - name: "Workflows"
       url: "#workflows"
-      weight: 25
-    - name: "Get Started"
-      url: "#getting-started"
-      weight: 30
-    - name: "FAQ"
-      url: "#faq"
-      weight: 35
-    - name: "Docs"
-      url: "#docs"
-      weight: 40
-
-  footer:
-    - name: "Documentation"
-      url: "#docs"
       weight: 10
-    - name: "FAQ"
-      url: "#faq"
-      weight: 15
+    - name: "Features"
+      url: "#features"
+      weight: 20
+    - name: "Providers"
+      url: "#providers"
+      weight: 30
+    - name: "Get Started"
+      url: "#get-started"
+      weight: 40
     - name: "GitHub"
       url: "https://github.com/indietool/cli"
+      weight: 50
+
+  footer:
+    - name: "GitHub"
+      url: "https://github.com/indietool/cli"
+      weight: 10
+    - name: "Documentation"
+      url: "https://github.com/indietool/cli#readme"
       weight: 20
     - name: "Issues"
       url: "https://github.com/indietool/cli/issues"
       weight: 30
-    - name: "Changelog"
-      url: "#"
+    - name: "Releases"
+      url: "https://github.com/indietool/cli/releases"
       weight: 40
 
 markup:

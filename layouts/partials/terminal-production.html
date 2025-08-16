@@ -1,0 +1,59 @@
+<div class="terminal">
+  <div class="terminal-header">
+    <div class="terminal-dots">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <span class="terminal-title">Production Management</span>
+  </div>
+  <div class="terminal-content">
+    <div class="terminal-line">
+      <span class="comment"># Check all your domains</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool domains list</span>
+    </div>
+    <div class="terminal-line output mono" style="margin-top: 8px;">
+      NAME                PROVIDER    STATUS   EXPIRES  AUTO-RENEW  AGE
+    </div>
+    <div class="terminal-line output mono">
+      myawesomeapp.com    cloudflare  <span class="success">healthy</span>  8mo      Yes         2y
+    </div>
+    <div class="terminal-line output mono">
+      sideproject.ai      cloudflare  <span class="success">healthy</span>  1y       Yes         1y
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># DNS with auto-detection</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool dns list example.com</span>
+    </div>
+    <div class="terminal-line output mono" style="margin-top: 8px;">
+      TYPE  NAME     CONTENT
+    </div>
+    <div class="terminal-line output mono">
+      A     <span class="warning">☁</span>@      192.168.1.1
+    </div>
+    <div class="terminal-line output mono">
+      A     www      192.168.1.2
+    </div>
+    <div class="terminal-line output mono">
+      CNAME <span class="warning">☁</span>api    example.com
+    </div>
+    <div class="terminal-line output mono">
+      MX    @        10 mail.example.com
+    </div>
+    <div class="terminal-line output" style="margin-top: 8px; font-size: 11px; color: #888;">
+      <em>Note: ☁ indicates Cloudflare proxied records</em>
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># Export secrets for deployment</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">export OPENAI_KEY=$(indietool secret get openai-key -S)</span>
+    </div>
+  </div>
+</div>

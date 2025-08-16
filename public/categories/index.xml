@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Infrastructure, Unified.</title>
+    <title>Categories on indietool - Stop bouncing between dashboards</title>
     <link>http://192.168.1.60:1313/categories/</link>
-    <description>Recent content in Categories on Infrastructure, Unified.</description>
+    <description>Recent content in Categories on indietool - Stop bouncing between dashboards</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2025 indietool. Built for indie builders, by indie builders.</copyright>
+    <copyright>© 2025 indietool. CLI only. No web UI planned.</copyright>
     <atom:link href="http://192.168.1.60:1313/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

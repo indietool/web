@@ -1,220 +1,134 @@
 {{ define "main" }}
 <section class="hero">
   <div class="container">
-    <h1>{{ .Site.Title | default "Unified Domain Management" }}</h1>
+    <div class="hero-badge">FOR INDIE BUILDERS</div>
+    <h1>Stop bouncing between <span class="gradient-text">dashboards</span></h1>
     <p class="hero-subtitle">
-      {{ .Site.Params.hero_subtitle | default "Manage domains across multiple registrars from a single command-line interface. Built for indie builders who hate DNS chaos." }}
+      One CLI for domains, DNS, and secrets. No vendor lock-in.<br>
+      Just you and your terminal.
     </p>
 
+    <!-- <div class="problem-points"> -->
+    <!--   <div class="problem-card"> -->
+    <!--     <div class="icon">😩</div> -->
+    <!--     <p>Tracking domain renewals in spreadsheets</p> -->
+    <!--   </div> -->
+    <!--   <div class="problem-card"> -->
+    <!--     <div class="icon">🔄</div> -->
+    <!--     <p>Logging into 5 different registrar dashboards</p> -->
+    <!--   </div> -->
+    <!--   <div class="problem-card"> -->
+    <!--     <div class="icon">📋</div> -->
+    <!--     <p>Copy-pasting secrets into .env files</p> -->
+    <!--   </div> -->
+    <!--   <div class="problem-card"> -->
+    <!--     <div class="icon">🔍</div> -->
+    <!--     <p>Manually checking if domains are available</p> -->
+    <!--   </div> -->
+    <!-- </div> -->
+
+    {{ partial "terminal-quickstart.html" . }}
+
     <div class="cta-buttons">
-      <a href="#getting-started" class="btn btn-primary" data-umami-event="get-started-btn">Get Started</a>
-      <a href="#features" class="btn btn-secondary" data-umami-event="learn-more-btn">Learn More</a>
+      <a href="#get-started" class="btn btn-primary" data-umami-event="hero-install">Install now →</a>
+      <a href="https://github.com/indietool/cli" class="btn btn-secondary" data-umami-event="hero-view-github">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section id="workflows" class="terminal-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Real Developer Workflows</h2>
+      <p class="section-subtitle">Stop context switching. Start shipping.</p>
     </div>
 
-    {{ partial "terminal-demo.html" . }}
+    <div class="terminal-container">
+      {{ partial "terminal-weekend.html" . }}
+    </div>
+
+    <div class="terminal-container">
+      {{ partial "terminal-production.html" . }}
+    </div>
   </div>
 </section>
 
 <section id="features" class="features">
   <div class="container">
-    <h2 class="section-title">End the DNS Chaos</h2>
+    <div class="section-header">
+      <h2 class="section-title">Everything You Need</h2>
+      <p class="section-subtitle">One tool. Zero vendor lock-in.</p>
+    </div>
 
-    <div class="features-grid">
-      {{ range .Site.Data.features }}
+    <div class="feature-grid">
       <div class="feature-card">
-        <div class="feature-icon {{ .icon_class }}" aria-hidden="true">{{ .icon }}</div>
-        <h3 class="feature-title">{{ .title }}</h3>
-        <p class="feature-description">
-          {{ .description }}
-        </p>
+        <div class="feature-icon domains">🔍</div>
+        <h3>Domain Discovery</h3>
+        <p>Check 50+ TLDs in seconds. Find the perfect domain for your next project with <code>domain explore</code>.</p>
       </div>
-      {{ end }}
+      <div class="feature-card">
+        <div class="feature-icon dns">⚡</div>
+        <h3>DNS Auto-Detection</h3>
+        <p>Automatically detects your DNS provider. List, create, update, and delete records without logging in.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon secrets">🔐</div>
+        <h3>Zero-Setup Secrets</h3>
+        <p>Encrypted with OS keyring. No cloud, no sync, no config. Just <code>secret set</code> to secure your secrets.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon explore">📊</div>
+        <h3>Multi-Registrar Management</h3>
+        <p>Track all your domains across Cloudflare, Porkbun, Namecheap, and GoDaddy in one place.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon auto">🎯</div>
+        <h3>ID-Based DNS Targeting</h3>
+        <p>Delete specific DNS records by ID when names overlap. No more accidental deletions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon project">💾</div>
+        <h3>Project Databases</h3>
+        <p>Organize secrets by project: <code>key@production</code>, <code>key@staging</code>, <code>key@dev</code>.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="providers" class="providers">
   <div class="container">
-    <h2 class="section-title">Supported Providers</h2>
-    <p class="providers-subtitle">
-      Connect your favorite registrars and manage them all from one tool
-    </p>
+    <div class="section-header">
+      <h2 class="section-title">Supported Providers</h2>
+      <p class="section-subtitle">Works with your existing infrastructure</p>
+    </div>
 
-    <div class="providers-grid">
-      {{ range .Site.Data.providers }}
-      <div class="provider-card">
-        <div class="provider-logo {{ .class }}" aria-label="{{ .name }} logo">
-          {{ .logo }}
-        </div>
-        <h3>{{ .name }}</h3>
-        <p>{{ .description }}</p>
-      </div>
-      {{ end }}
+    <div class="provider-logos">
+      <div class="provider-logo">Cloudflare</div>
+      <div class="provider-logo">Porkbun</div>
+      <div class="provider-logo">Namecheap</div>
+      <div class="provider-logo">GoDaddy</div>
     </div>
   </div>
 </section>
 
-<section id="workflows" class="workflows">
+<section id="get-started" class="get-started">
   <div class="container">
-    <h2 class="section-title">Everyday Developer Flows</h2>
-    <p class="section-subtitle">Real workflows for real projects</p>
-
-    <div class="workflows-grid">
-      <div class="workflow-card">
-        <h3 class="workflow-title">🚀 Weekend Project Setup</h3>
-        <div class="terminal-demo">
-          <div class="terminal-header">
-            <div class="terminal-dot dot-red" aria-hidden="true"></div>
-            <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-            <div class="terminal-dot dot-green" aria-hidden="true"></div>
-          </div>
-          <div class="terminal-content">
-            <pre class="terminal-text">
-<span class="prompt">$ </span><span class="command">indietool domain explore myproject --tlds dev,com,ai</span>
-<span class="table-header">DOMAIN STATUS TLD EXPIRY</span>
-<span class="domain-name">myproject.ai</span> <span class="status-healthy">Available</span> ai -
-<span class="domain-name">myproject.dev</span> <span class="status-healthy">Available</span> dev -
-<span class="domain-name">myproject.com</span> <span class="status-warning">Taken</span> com 2026-07-06
-
-<span class="prompt">$ </span><span class="command">indietool secret set openai-key "sk-..." --note "OpenAI API key"</span>
-<span class="success">✓ Secret 'openai-key' stored successfully</span>
-
-<span class="prompt">$ </span><span class="command">indietool secret set stripe-key "sk_test_..." --note "Stripe test key"</span>
-<span class="success">✓ Secret 'stripe-key' stored successfully</span>
-            </pre>
-          </div>
-        </div>
-      </div>
-
-      <div class="workflow-card">
-        <h3 class="workflow-title">🚀 Production Deployment</h3>
-        <div class="terminal-demo">
-          <div class="terminal-header">
-            <div class="terminal-dot dot-red" aria-hidden="true"></div>
-            <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-            <div class="terminal-dot dot-green" aria-hidden="true"></div>
-          </div>
-          <div class="terminal-content">
-            <pre class="terminal-text">
-<span class="prompt">$ </span><span class="command">indietool domains list --provider cloudflare</span>
-<span class="table-header">DOMAIN PROVIDER STATUS EXPIRY</span>
-<span class="domain-name">myawesomeapp.com</span> <span class="provider-name">cloudflare</span> <span class="status-healthy">Active</span> 2025-12-15
-<span class="domain-name">sideproject.ai</span> <span class="provider-name">cloudflare</span> <span class="status-healthy">Active</span> 2025-08-10
-
-<span class="prompt">$ </span><span class="command">export OPENAI_KEY=$(indietool secret get openai-key --show --json | jq -r '.value')</span>
-<span class="prompt">$ </span><span class="command">export STRIPE_KEY=$(indietool secret get stripe-key --show --json | jq -r '.value')</span>
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="secrets-demo" class="secrets-demo">
-  <div class="container">
-    <h2 class="section-title">Secure Your Development Workflow</h2>
-    <p class="section-subtitle">Store API keys and secrets with zero infrastructure. Git-like commands, encrypted files.</p>
-
-    <div class="terminal-demo">
-      <div class="terminal-header">
-        <div class="terminal-dot dot-red" aria-hidden="true"></div>
-        <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-        <div class="terminal-dot dot-green" aria-hidden="true"></div>
-      </div>
-      <div class="terminal-content">
-        <pre class="terminal-text">
-<span class="prompt">$ </span><span class="command">indietool secrets init</span>
-<span class="success">✓ Encryption key initialized for database 'default'</span>
-
-<span class="prompt">$ </span><span class="command">indietool secret set github-token "ghp_1234567890abcdef" --note "Personal access token"</span>
-<span class="success">✓ Secret 'github-token' stored successfully</span>
-
-<span class="prompt">$ </span><span class="command">indietool secret list</span>
-<span class="table-header">NAME NOTE CREATED</span>
-github-token Personal access token 2025-01-26 14:30:15
-
-<span class="prompt">$ </span><span class="command">indietool secret get github-token --show</span>
-ghp_1234567890abcdef
-        </pre>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq" class="faq">
-  <div class="container">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Which platforms are supported?</h3>
-        <div class="faq-answer">
-          <p>Currently macOS and Linux only.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Where are my secrets stored?</h3>
-        <div class="faq-answer">
-          <p>Encrypted locally at <code>~/.config/indietool/secrets/</code>, using an encryption key stored in your OS keyring (Keychain on macOS, <code>gnome-keyring</code> on Linux).</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ What if I lose my computer?</h3>
-        <div class="faq-answer">
-          <p>Secrets are useless without your OS user account + keyring. Just run <code>indietool secrets init</code> on your new machine and re-add your secrets.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Which registrars are supported?</h3>
-        <div class="faq-answer">
-          <p>Cloudflare, Porkbun, Namecheap, and Godaddy are currently supported. Others coming soon</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Can I sync secrets across machines?</h3>
-        <div class="faq-answer">
-          <p>No, secrets are not synced across machines. This keeps them secure and local to your development environment.</p>
-          <p>Users will have to find their own way to transfer secrets between machines if desired.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Is there a web UI or GUI?</h3>
-        <div class="faq-answer">
-          <p>No, indietool is CLI-only for now. This keeps it fast, lightweight, and perfect for developer workflows.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="getting-started" class="getting-started">
-  <div class="container">
-    <h2 class="section-title">Get Started in Minutes</h2>
-
-    <div class="terminal-demo">
-      <div class="terminal-header">
-        <div class="terminal-dot dot-red" aria-hidden="true"></div>
-        <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-        <div class="terminal-dot dot-green" aria-hidden="true"></div>
-      </div>
-      <div class="terminal-content">
-        <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-        <pre class="terminal-text"><span class="prompt">$ </span><span class="command">{{ .Site.Params.install_command | default "go install github.com/indietool/cli@latest" }}</span></pre>
-      </div>
+    <div class="section-header">
+      <h2 class="section-title">Get Started in 30 Seconds</h2>
+      <p class="section-subtitle">Built for indie builders who just want to ship</p>
     </div>
 
-    <p>Then configure your first provider and start managing domains:</p>
+    <div class="install-command">
+      <code>
+        $ brew install indietool/tap/indietool
+      </code>
+      <button class="copy-btn" onclick="copyCommand(this, 'brew install indietool/ta/indietool')" data-umami-event="install-copy">Copy</button>
+    </div>
 
-    {{ partial "setup-terminal.html" . }}
 
-    <div class="cta-section">
-      <a href="#docs" class="btn btn-primary" data-umami-event="view-full-documentation-btn">View Full Documentation</a>
+    <div class="cta-buttons">
+      <a href="https://github.com/indietool/cli#readme" class="btn btn-primary" data-umami-event="install-view-docs">View Documentation</a>
+      <a href="https://github.com/indietool/cli/issues" class="btn btn-secondary" data-umami-event="install-report-issue">Report an Issue</a>
     </div>
   </div>
 </section>

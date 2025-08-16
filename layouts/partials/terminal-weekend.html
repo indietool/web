@@ -1,0 +1,53 @@
+<div class="terminal">
+  <div class="terminal-header">
+    <div class="terminal-dots">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <span class="terminal-title">Weekend Project Setup</span>
+  </div>
+  <div class="terminal-content">
+    <div class="terminal-line">
+      <span class="comment"># Find the perfect domain</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool domain explore myproject --tlds dev,ai,com</span>
+    </div>
+    <div class="terminal-line output mono" style="margin-top: 8px;">
+      DOMAIN STATUS TLD EXPIRY
+    </div>
+    <div class="terminal-line output mono">
+      myproject.ai <span class="success">Available</span> ai -
+    </div>
+    <div class="terminal-line output mono">
+      myproject.dev <span class="success">Available</span> dev -
+    </div>
+    <div class="terminal-line output mono">
+      myproject.com <span class="error">Taken</span> com 2026-07-06
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># Store secrets securely (auto-encrypts!)</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool secret set stripe-key "sk_test_..." --note "Stripe test key"</span>
+    </div>
+    <div class="terminal-line output">
+      <span class="success">✓ Auto-generated encryption key for database 'default'</span>
+    </div>
+    <div class="terminal-line output">
+      <span class="success">✓ Secret 'stripe-key' stored successfully</span>
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># Set up DNS instantly</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool dns set myproject.dev @ A 192.168.1.100</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool dns set myproject.dev www CNAME myproject.dev</span>
+    </div>
+  </div>
+</div>

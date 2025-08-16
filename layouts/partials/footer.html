@@ -2,9 +2,12 @@
   <div class="container">
     <div class="footer-links">
       {{ range .Site.Menus.footer }}
-      <a href="{{ .URL }}" data-umami-event="ftr-{{ .Name | lower }}">{{ .Name }}</a>
+      <a href="{{ .URL }}">{{ .Name }}</a>
       {{ end }}
     </div>
-    <p>{{ .Site.Copyright | default "© 2025 indietool. Built for indie builders, by indie builders." }}</p>
+    <p class="footer-text">
+      {{ .Site.Copyright | default "© 2025 indietool. CLI only. No web UI planned." }}<br>
+      Built for indie builders, by indie builders.
+    </p>
   </div>
 </footer>

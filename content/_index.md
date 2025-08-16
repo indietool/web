@@ -1,4 +1,4 @@
 ---
-title: "indietools - Unified Domain Management"
-description: "Manage domains across multiple registrars from a single command-line interface. Built for indie builders who hate DNS chaos."
+title: "indietool - Stop bouncing between dashboards"
+description: "One CLI for domains, DNS, and secrets. Built for indie builders who just want to ship."
 ---

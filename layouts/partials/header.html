@@ -4,7 +4,7 @@
       <a href="/" class="logo">indietool</a>
       <ul class="nav-links">
         {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}" data-umami-event="hdr-{{ .Name | lower }}">{{ .Name }}</a></li>
+        <li><a href="{{ .URL }}" data-umami-event="hdr-{{ .Name | strings.ToLower }}">{{ .Name }}</a></li>
         {{ end }}
       </ul>
       <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">

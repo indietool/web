@@ -4,21 +4,20 @@
 	<meta name="generator" content="Hugo 0.123.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="indietool: One CLI for all your infrastructure chores." />
-<meta name="keywords" content="domain management, indie developers, CLI, DNS, Cloudflare, Porkbun, Namecheap, GoDaddy, secrets, encryption" />
-<meta property="og:title" content="Infrastructure, Unified." />
-<meta property="og:description" content="indietool: One CLI for all your infrastructure chores." />
+<meta name="description" content="indietool: CLI for indie builders. Manage domains across registrars, DNS records with auto-detection, and secrets with OS keyring encryption." />
+<meta name="keywords" content="domain management, DNS management, secrets management, CLI tool, indie developers, Cloudflare, Porkbun, Namecheap" />
+<meta property="og:title" content="indietool - Stop bouncing between dashboards" />
+<meta property="og:description" content="One CLI for domains, DNS, and secrets. Built for indie builders who just want to ship." />
 <meta property="og:image" content="/images/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<title>Infrastructure, Unified.</title>
+<title>indietool - Stop bouncing between dashboards</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Josefin+Sans:wght@400;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Josefin+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
 
+  
+  <link rel="stylesheet" href="http://192.168.1.60:1313/css/main.min.css" />
 
-<link rel="stylesheet" href="http://192.168.1.60:1313/css/main.min.css"  />
-
-<script defer src="https://i.indietool.dev/script.js" data-website-id="810d8615-dbd3-4166-a4be-51529c7407da" data-tag="web"></script>
 
   </head>
   <body>
@@ -71,17 +70,15 @@
       <a href="/" class="logo">indietool</a>
       <ul class="nav-links">
         
+        <li><a href="#workflows" data-umami-event="hdr-workflows">Workflows</a></li>
+        
         <li><a href="#features" data-umami-event="hdr-features">Features</a></li>
         
         <li><a href="#providers" data-umami-event="hdr-providers">Providers</a></li>
         
-        <li><a href="#workflows" data-umami-event="hdr-workflows">Workflows</a></li>
+        <li><a href="#get-started" data-umami-event="hdr-get started">Get Started</a></li>
         
-        <li><a href="#getting-started" data-umami-event="hdr-get started">Get Started</a></li>
-        
-        <li><a href="#faq" data-umami-event="hdr-faq">FAQ</a></li>
-        
-        <li><a href="#docs" data-umami-event="hdr-docs">Docs</a></li>
+        <li><a href="https://github.com/indietool/cli" data-umami-event="hdr-github">GitHub</a></li>
         
       </ul>
       <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -96,298 +93,278 @@
       
 <section class="hero">
   <div class="container">
-    <h1>Infrastructure, Unified.</h1>
+    <div class="hero-badge">FOR INDIE BUILDERS</div>
+    <h1>Stop bouncing between <span class="gradient-text">dashboards</span></h1>
     <p class="hero-subtitle">
-      Manage domains, DNS, secrets and more from one place. Built for indie builders who value efficiency.
+      One CLI for domains, DNS, and secrets. No vendor lock-in.<br>
+      Just you and your terminal.
     </p>
 
-    <div class="cta-buttons">
-      <a href="#getting-started" class="btn btn-primary" data-umami-event="get-started-btn">Get Started</a>
-      <a href="#features" class="btn btn-secondary" data-umami-event="learn-more-btn">Learn More</a>
-    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
-    <div class="terminal-demo">
+    <div class="terminal">
   <div class="terminal-header">
-    <div class="terminal-dot dot-red" aria-hidden="true"></div>
-    <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-    <div class="terminal-dot dot-green" aria-hidden="true"></div>
+    <div class="terminal-dots">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <span class="terminal-title">Try it in 30 seconds</span>
   </div>
   <div class="terminal-content">
-    <pre class="terminal-text"><span class="prompt">$ </span><span class="command">indietools domains list</span>
-<span class="table-header">NAME                PROVIDER    STATUS   EXPIRES  AUTO-RENEW  AGE</span>
-<span class="domain-name">pixelcraft.io</span>       <span class="provider-name">cloudflare</span>  <span class="status-healthy">healthy</span>  2mo      Yes         18d
-<span class="domain-name">startup.dev</span>         <span class="provider-name">porkbun</span>     <span class="status-healthy">healthy</span>  5mo      Yes         45d
-<span class="domain-name">project.org</span>         <span class="provider-name">namecheap</span>   <span class="status-warning">warning</span>  15d      No          2y
-<span class="domain-name">mywebsite.com</span>       <span class="provider-name">cloudflare</span>  <span class="status-healthy">healthy</span>  8mo      Yes         1y
-<span class="domain-name">demo.app</span>            <span class="provider-name">porkbun</span>     <span class="status-healthy">healthy</span>  11mo     Yes         6mo</pre>
+    <div class="terminal-line">
+      <span class="comment"># Check domain availability</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool domain explore myapp</span>
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># Save a test API key (auto-creates encryption key)</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool secret set stripe-key "sk_test_..." --note "Stripe test key"</span>
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># Manage DNS records with automatic provider detection</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool dns list example.com</span>
+    </div>
   </div>
 </div>
 
+
+    <div class="cta-buttons">
+      <a href="#get-started" class="btn btn-primary" data-umami-event="hero-install">Install now →</a>
+      <a href="https://github.com/indietool/cli" class="btn btn-secondary" data-umami-event="hero-view-github">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section id="workflows" class="terminal-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Real Developer Workflows</h2>
+      <p class="section-subtitle">Stop context switching. Start shipping.</p>
+    </div>
+
+    <div class="terminal-container">
+      <div class="terminal">
+  <div class="terminal-header">
+    <div class="terminal-dots">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <span class="terminal-title">Weekend Project Setup</span>
+  </div>
+  <div class="terminal-content">
+    <div class="terminal-line">
+      <span class="comment"># Find the perfect domain</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool domain explore myproject --tlds dev,ai,com</span>
+    </div>
+    <div class="terminal-line output mono" style="margin-top: 8px;">
+      DOMAIN STATUS TLD EXPIRY
+    </div>
+    <div class="terminal-line output mono">
+      myproject.ai <span class="success">Available</span> ai -
+    </div>
+    <div class="terminal-line output mono">
+      myproject.dev <span class="success">Available</span> dev -
+    </div>
+    <div class="terminal-line output mono">
+      myproject.com <span class="error">Taken</span> com 2026-07-06
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># Store secrets securely (auto-encrypts!)</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool secret set stripe-key "sk_test_..." --note "Stripe test key"</span>
+    </div>
+    <div class="terminal-line output">
+      <span class="success">✓ Auto-generated encryption key for database 'default'</span>
+    </div>
+    <div class="terminal-line output">
+      <span class="success">✓ Secret 'stripe-key' stored successfully</span>
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># Set up DNS instantly</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool dns set myproject.dev @ A 192.168.1.100</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool dns set myproject.dev www CNAME myproject.dev</span>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <div class="terminal-container">
+      <div class="terminal">
+  <div class="terminal-header">
+    <div class="terminal-dots">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <span class="terminal-title">Production Management</span>
+  </div>
+  <div class="terminal-content">
+    <div class="terminal-line">
+      <span class="comment"># Check all your domains</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool domains list</span>
+    </div>
+    <div class="terminal-line output mono" style="margin-top: 8px;">
+      NAME                PROVIDER    STATUS   EXPIRES  AUTO-RENEW  AGE
+    </div>
+    <div class="terminal-line output mono">
+      myawesomeapp.com    cloudflare  <span class="success">healthy</span>  8mo      Yes         2y
+    </div>
+    <div class="terminal-line output mono">
+      sideproject.ai      cloudflare  <span class="success">healthy</span>  1y       Yes         1y
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># DNS with auto-detection</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">indietool dns list example.com</span>
+    </div>
+    <div class="terminal-line output mono" style="margin-top: 8px;">
+      TYPE  NAME     CONTENT
+    </div>
+    <div class="terminal-line output mono">
+      A     <span class="warning">☁</span>@      192.168.1.1
+    </div>
+    <div class="terminal-line output mono">
+      A     www      192.168.1.2
+    </div>
+    <div class="terminal-line output mono">
+      CNAME <span class="warning">☁</span>api    example.com
+    </div>
+    <div class="terminal-line output mono">
+      MX    @        10 mail.example.com
+    </div>
+    <div class="terminal-line output" style="margin-top: 8px; font-size: 11px; color: #888;">
+      <em>Note: ☁ indicates Cloudflare proxied records</em>
+    </div>
+    <br>
+    <div class="terminal-line">
+      <span class="comment"># Export secrets for deployment</span>
+    </div>
+    <div class="terminal-line">
+      <span class="prompt">$</span> <span class="command">export OPENAI_KEY=$(indietool secret get openai-key -S)</span>
+    </div>
+  </div>
+</div>
+
+    </div>
   </div>
 </section>
 
 <section id="features" class="features">
   <div class="container">
-    <h2 class="section-title">End the DNS Chaos</h2>
+    <div class="section-header">
+      <h2 class="section-title">Everything You Need</h2>
+      <p class="section-subtitle">One tool. Zero vendor lock-in.</p>
+    </div>
 
-    <div class="features-grid">
-      
+    <div class="feature-grid">
       <div class="feature-card">
-        <div class="feature-icon icon-search" aria-hidden="true">🔍</div>
-        <h3 class="feature-title">Smart Domain Discovery</h3>
-        <p class="feature-description">
-          Quickly search across 50 TLDs with real-time availability checking. Find the perfect domain for your next project in seconds.
-        </p>
+        <div class="feature-icon domains">🔍</div>
+        <h3>Domain Discovery</h3>
+        <p>Check 50+ TLDs in seconds. Find the perfect domain for your next project with <code>domain explore</code>.</p>
       </div>
-      
       <div class="feature-card">
-        <div class="feature-icon icon-manage" aria-hidden="true">📊</div>
-        <h3 class="feature-title">Unified Management</h3>
-        <p class="feature-description">
-          View and manage all your domains from different registrars in one place. Track expiry dates, auto-renewal status, and DNS records.
-        </p>
+        <div class="feature-icon dns">⚡</div>
+        <h3>DNS Auto-Detection</h3>
+        <p>Automatically detects your DNS provider. List, create, update, and delete records without logging in.</p>
       </div>
-      
       <div class="feature-card">
-        <div class="feature-icon icon-secrets" aria-hidden="true">🔒</div>
-        <h3 class="feature-title">Developer-First Secrets</h3>
-        <p class="feature-description">
-          Store API keys and secrets securely with zero infrastructure. Git-like CLI commands, encrypted files, and perfect for local development.
-        </p>
+        <div class="feature-icon secrets">🔐</div>
+        <h3>Zero-Setup Secrets</h3>
+        <p>Encrypted with OS keyring. No cloud, no sync, no config. Just <code>secret set</code> to secure your secrets.</p>
       </div>
-      
       <div class="feature-card">
-        <div class="feature-icon icon-unified" aria-hidden="true">⚡</div>
-        <h3 class="feature-title">Single Interface</h3>
-        <p class="feature-description">
-          Configure once and manage everything through a clean CLI. No more logging into multiple registrar dashboards.
-        </p>
+        <div class="feature-icon explore">📊</div>
+        <h3>Multi-Registrar Management</h3>
+        <p>Track all your domains across Cloudflare, Porkbun, Namecheap, and GoDaddy in one place.</p>
       </div>
-      
+      <div class="feature-card">
+        <div class="feature-icon auto">🎯</div>
+        <h3>ID-Based DNS Targeting</h3>
+        <p>Delete specific DNS records by ID when names overlap. No more accidental deletions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon project">💾</div>
+        <h3>Project Databases</h3>
+        <p>Organize secrets by project: <code>key@production</code>, <code>key@staging</code>, <code>key@dev</code>.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="providers" class="providers">
   <div class="container">
-    <h2 class="section-title">Supported Providers</h2>
-    <p class="providers-subtitle">
-      Connect your favorite registrars and manage them all from one tool
-    </p>
+    <div class="section-header">
+      <h2 class="section-title">Supported Providers</h2>
+      <p class="section-subtitle">Works with your existing infrastructure</p>
+    </div>
 
-    <div class="providers-grid">
-      
-      <div class="provider-card">
-        <div class="provider-logo cloudflare" aria-label="Cloudflare logo">
-          CF
-        </div>
-        <h3>Cloudflare</h3>
-        <p>Fast, secure domains with built-in CDN and security features.</p>
-      </div>
-      
-      <div class="provider-card">
-        <div class="provider-logo porkbun" aria-label="Porkbun logo">
-          PB
-        </div>
-        <h3>Porkbun</h3>
-        <p>Developer-friendly registrar with competitive pricing and great API.</p>
-      </div>
-      
-      <div class="provider-card">
-        <div class="provider-logo namecheap" aria-label="Namecheap logo">
-          NC
-        </div>
-        <h3>Namecheap</h3>
-        <p>Popular registrar with affordable domains and solid customer support.</p>
-      </div>
-      
-      <div class="provider-card">
-        <div class="provider-logo godaddy" aria-label="GoDaddy logo">
-          GD
-        </div>
-        <h3>GoDaddy</h3>
-        <p>World&#39;s largest domain registrar with extensive TLD selection.</p>
-      </div>
-      
+    <div class="provider-logos">
+      <div class="provider-logo">Cloudflare</div>
+      <div class="provider-logo">Porkbun</div>
+      <div class="provider-logo">Namecheap</div>
+      <div class="provider-logo">GoDaddy</div>
     </div>
   </div>
 </section>
 
-<section id="workflows" class="workflows">
+<section id="get-started" class="get-started">
   <div class="container">
-    <h2 class="section-title">Everyday Developer Flows</h2>
-    <p class="section-subtitle">Real workflows for real projects</p>
-
-    <div class="workflows-grid">
-      <div class="workflow-card">
-        <h3 class="workflow-title">🚀 Weekend Project Setup</h3>
-        <div class="terminal-demo">
-          <div class="terminal-header">
-            <div class="terminal-dot dot-red" aria-hidden="true"></div>
-            <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-            <div class="terminal-dot dot-green" aria-hidden="true"></div>
-          </div>
-          <div class="terminal-content">
-            <pre class="terminal-text">
-<span class="prompt">$ </span><span class="command">indietool domain explore myproject --tlds dev,com,ai</span>
-<span class="table-header">DOMAIN STATUS TLD EXPIRY</span>
-<span class="domain-name">myproject.ai</span> <span class="status-healthy">Available</span> ai -
-<span class="domain-name">myproject.dev</span> <span class="status-healthy">Available</span> dev -
-<span class="domain-name">myproject.com</span> <span class="status-warning">Taken</span> com 2026-07-06
-
-<span class="prompt">$ </span><span class="command">indietool secret set openai-key "sk-..." --note "OpenAI API key"</span>
-<span class="success">✓ Secret 'openai-key' stored successfully</span>
-
-<span class="prompt">$ </span><span class="command">indietool secret set stripe-key "sk_test_..." --note "Stripe test key"</span>
-<span class="success">✓ Secret 'stripe-key' stored successfully</span>
-            </pre>
-          </div>
-        </div>
-      </div>
-
-      <div class="workflow-card">
-        <h3 class="workflow-title">🚀 Production Deployment</h3>
-        <div class="terminal-demo">
-          <div class="terminal-header">
-            <div class="terminal-dot dot-red" aria-hidden="true"></div>
-            <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-            <div class="terminal-dot dot-green" aria-hidden="true"></div>
-          </div>
-          <div class="terminal-content">
-            <pre class="terminal-text">
-<span class="prompt">$ </span><span class="command">indietool domains list --provider cloudflare</span>
-<span class="table-header">DOMAIN PROVIDER STATUS EXPIRY</span>
-<span class="domain-name">myawesomeapp.com</span> <span class="provider-name">cloudflare</span> <span class="status-healthy">Active</span> 2025-12-15
-<span class="domain-name">sideproject.ai</span> <span class="provider-name">cloudflare</span> <span class="status-healthy">Active</span> 2025-08-10
-
-<span class="prompt">$ </span><span class="command">export OPENAI_KEY=$(indietool secret get openai-key --show --json | jq -r '.value')</span>
-<span class="prompt">$ </span><span class="command">export STRIPE_KEY=$(indietool secret get stripe-key --show --json | jq -r '.value')</span>
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="secrets-demo" class="secrets-demo">
-  <div class="container">
-    <h2 class="section-title">Secure Your Development Workflow</h2>
-    <p class="section-subtitle">Store API keys and secrets with zero infrastructure. Git-like commands, encrypted files.</p>
-
-    <div class="terminal-demo">
-      <div class="terminal-header">
-        <div class="terminal-dot dot-red" aria-hidden="true"></div>
-        <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-        <div class="terminal-dot dot-green" aria-hidden="true"></div>
-      </div>
-      <div class="terminal-content">
-        <pre class="terminal-text">
-<span class="prompt">$ </span><span class="command">indietool secrets init</span>
-<span class="success">✓ Encryption key initialized for database 'default'</span>
-
-<span class="prompt">$ </span><span class="command">indietool secret set github-token "ghp_1234567890abcdef" --note "Personal access token"</span>
-<span class="success">✓ Secret 'github-token' stored successfully</span>
-
-<span class="prompt">$ </span><span class="command">indietool secret list</span>
-<span class="table-header">NAME NOTE CREATED</span>
-github-token Personal access token 2025-01-26 14:30:15
-
-<span class="prompt">$ </span><span class="command">indietool secret get github-token --show</span>
-ghp_1234567890abcdef
-        </pre>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq" class="faq">
-  <div class="container">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Which platforms are supported?</h3>
-        <div class="faq-answer">
-          <p>Currently macOS and Linux only.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Where are my secrets stored?</h3>
-        <div class="faq-answer">
-          <p>Encrypted locally at <code>~/.config/indietool/secrets/</code>, using an encryption key stored in your OS keyring (Keychain on macOS, <code>gnome-keyring</code> on Linux).</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ What if I lose my computer?</h3>
-        <div class="faq-answer">
-          <p>Secrets are useless without your OS user account + keyring. Just run <code>indietool secrets init</code> on your new machine and re-add your secrets.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Which registrars are supported?</h3>
-        <div class="faq-answer">
-          <p>Cloudflare, Porkbun, Namecheap, and Godaddy are currently supported. Others coming soon</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Can I sync secrets across machines?</h3>
-        <div class="faq-answer">
-          <p>No, secrets are not synced across machines. This keeps them secure and local to your development environment.</p>
-          <p>Users will have to find their own way to transfer secrets between machines if desired.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-question">❓ Is there a web UI or GUI?</h3>
-        <div class="faq-answer">
-          <p>No, indietool is CLI-only for now. This keeps it fast, lightweight, and perfect for developer workflows.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="getting-started" class="getting-started">
-  <div class="container">
-    <h2 class="section-title">Get Started in Minutes</h2>
-
-    <div class="terminal-demo">
-      <div class="terminal-header">
-        <div class="terminal-dot dot-red" aria-hidden="true"></div>
-        <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-        <div class="terminal-dot dot-green" aria-hidden="true"></div>
-      </div>
-      <div class="terminal-content">
-        <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-        <pre class="terminal-text"><span class="prompt">$ </span><span class="command">go install github.com/indietool-one/cli@latest</span></pre>
-      </div>
+    <div class="section-header">
+      <h2 class="section-title">Get Started in 30 Seconds</h2>
+      <p class="section-subtitle">Built for indie builders who just want to ship</p>
     </div>
 
-    <p>Then configure your first provider and start managing domains:</p>
-
-    <div class="terminal-demo">
-  <div class="terminal-header">
-    <div class="terminal-dot dot-red" aria-hidden="true"></div>
-    <div class="terminal-dot dot-yellow" aria-hidden="true"></div>
-    <div class="terminal-dot dot-green" aria-hidden="true"></div>
-  </div>
-  <div class="terminal-content">
-    <pre class="terminal-text"><span class="prompt">$ </span><span class="command">indietools config add provider cloudflare --api-token your-token</span>
-✓ Cloudflare provider configured successfully
-
-<span class="prompt">$ </span><span class="command">indietools domains list</span>
-✓ Found 3 domains across 1 provider</pre>
-  </div>
-</div>
+    <div class="install-command">
+      <code>
+        $ brew install indietool/tap/indietool
+      </code>
+      <button class="copy-btn" onclick="copyCommand(this, 'brew install indietool/ta/indietool')" data-umami-event="install-copy">Copy</button>
+    </div>
 
 
-    <div class="cta-section">
-      <a href="#docs" class="btn btn-primary" data-umami-event="view-full-documentation-btn">View Full Documentation</a>
+    <div class="cta-buttons">
+      <a href="https://github.com/indietool/cli#readme" class="btn btn-primary" data-umami-event="install-view-docs">View Documentation</a>
+      <a href="https://github.com/indietool/cli/issues" class="btn btn-secondary" data-umami-event="install-report-issue">Report an Issue</a>
     </div>
   </div>
 </section>
@@ -398,18 +375,19 @@ ghp_1234567890abcdef
   <div class="container">
     <div class="footer-links">
       
-      <a href="#docs" data-umami-event="ftr-documentation">Documentation</a>
+      <a href="https://github.com/indietool/cli">GitHub</a>
       
-      <a href="#faq" data-umami-event="ftr-faq">FAQ</a>
+      <a href="https://github.com/indietool/cli#readme">Documentation</a>
       
-      <a href="https://github.com/indietool/cli" data-umami-event="ftr-github">GitHub</a>
+      <a href="https://github.com/indietool/cli/issues">Issues</a>
       
-      <a href="https://github.com/indietool/cli/issues" data-umami-event="ftr-issues">Issues</a>
-      
-      <a href="#" data-umami-event="ftr-changelog">Changelog</a>
+      <a href="https://github.com/indietool/cli/releases">Releases</a>
       
     </div>
-    <p>© 2025 indietool. Built for indie builders, by indie builders.</p>
+    <p class="footer-text">
+      © 2025 indietool. CLI only. No web UI planned.<br>
+      Built for indie builders, by indie builders.
+    </p>
   </div>
 </footer>
 
